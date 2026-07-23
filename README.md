@@ -14,6 +14,21 @@ npm run dev
 Then open the local URL printed by Vite. Build the production bundle with
 `npm run build` and check source quality with `npm run lint`.
 
+## Play on GitHub Pages
+
+The game is ready to deploy at `https://<owner>.github.io/Crescent-Luna/`.
+The **Deploy game to GitHub Pages** workflow builds and publishes the game
+whenever a commit reaches `main` or `master`. It can also be started manually
+from the repository's **Actions** tab.
+
+To enable the first deployment, open **Settings → Pages** in the GitHub
+repository and choose **GitHub Actions** as the source. Push this workflow to
+the default branch (or run it with **Run workflow**), then follow the deployment
+URL shown in the workflow summary. No `gh-pages` branch is required.
+
+If the repository is renamed, update the `base` path in `vite.config.ts` to
+match the new repository name before deploying.
+
 ## Publishing changes
 
 This checkout does not have a Git remote configured. For a normal local clone,
