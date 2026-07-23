@@ -2,22 +2,17 @@
 
 Chat-based adventure.
 
-## Environment setup
+## Run locally
 
-The repository currently contains only this project description. There are no
-application dependencies, build tools, environment variables, or external
-services to configure yet.
+Install dependencies and start the Vite development server:
 
-After opening or cloning the repository, confirm that the workspace is
-available with:
-
-```sh
-git status
-git log -1 --oneline
+```bash
+npm install
+npm run dev
 ```
 
-A successful checkout should report a clean working tree on your current
-branch. No additional setup is required until an application stack is added.
+Then open the local URL printed by Vite. Build the production bundle with
+`npm run build` and check source quality with `npm run lint`.
 
 ## Publishing changes
 
@@ -61,6 +56,5 @@ missing permission is specifically pull-request creation.
 
 ## Development status
 
-The application has not been scaffolded yet. When implementation begins, add
-the required runtime version, dependency installation command, environment
-variables, and start/test commands to this document.
+The browser game is implemented with React, TypeScript, and local state. It has
+no server, external API, environment variables, or persistence requirements.
