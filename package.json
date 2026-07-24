@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run story:build && tsc -b && vite build",
+    "story:build": "node scripts/compile-story.mjs story/sample.story src/generated/story.json",
+    "story:check": "node scripts/compile-story.mjs --check story/sample.story",
     "lint": "eslint .",
     "preview": "vite preview"
   },

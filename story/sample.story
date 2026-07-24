@@ -504,3 +504,12 @@ luna: We are not finished.
 nox [thought]: The entrance is gone.
 nox [thought]: The cat is still here.
 system: Somewhere ahead, pale moths flutter toward moving air.
+@scene part2_escape_from_luna
+system: PART II
+system: ESCAPE FROM LUNA
+system: Limestone Cave — Unknown depth
+system: Nox follows Luna into the underground passage.
+luna: Stay close, little mouse.
+nox [thought]: The entrance is gone.
+nox [thought]: For now, Luna is the only guide I have.
+system: Pale moths flutter ahead toward moving air.

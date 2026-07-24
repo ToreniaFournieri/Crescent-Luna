@@ -1,5 +1,8 @@
-export type Speaker = 'player' | 'luna' | 'system'
-export interface ChatMessage { id: string; speaker: Speaker; text: string }
-export interface Suggestion { id: string; label: string; nextNodeId?: string; completedText?: string }
-export interface StoryNode { id: string; draftText: string; suggestions: Suggestion[] }
-export interface Ending { id: string; title: string; messages: Omit<ChatMessage, 'id'>[]; delayedMessage?: string }
+export interface RuntimeMessage { speaker: string; text: string; mode?: string; delay?: number }
+export interface RuntimeChoice { id: string; label: string; text: string; next: string }
+export type RuntimeNode =
+  | { kind: 'scene'; id: string; messages: RuntimeMessage[]; next: string | null }
+  | { kind: 'prompt'; id: string; draft: string; choices: RuntimeChoice[] }
+  | { kind: 'ending'; id: string; title: string; messages: RuntimeMessage[]; next: null }
+export interface CompiledStory { formatVersion: 1; storyId: string; revision: string; entry: string; nodes: Record<string, RuntimeNode> }
+export interface ChatMessage extends RuntimeMessage { id: string }
