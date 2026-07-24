@@ -1012,10 +1012,6 @@ luna: Try not to become useful as bait again.
 system: PART III
 system: RIZO
 system: Limestone Ridge — Bandit Camp
-rizo: Welcome back, Nox.
-rizo: Tell us everything you found.
-system: Behind Rizo, a black-and-silver crescent hangs from his belt.
-nox [thought]: The Rain Seal.
 -> p050_rizo_welcome
 
 @scene part3_rizo_confrontation

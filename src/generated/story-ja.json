@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "storyId": "crescent-luna",
-  "revision": "00100aca6e0f",
+  "revision": "f1841ceb8e3b",
   "entry": "part1_dungeon",
   "nodes": {
     "part1_dungeon": {
@@ -3823,23 +3823,6 @@
         {
           "speaker": "system",
           "text": "石灰岩の尾根 — 盗賊の野営地"
-        },
-        {
-          "speaker": "rizo",
-          "text": "おかえり、ノックス。"
-        },
-        {
-          "speaker": "rizo",
-          "text": "見つけたものをすべて話せ。"
-        },
-        {
-          "speaker": "system",
-          "text": "リゾの背後で、黒と銀の三日月が腰帯から下がっている。"
-        },
-        {
-          "speaker": "nox",
-          "text": "雨の印章だ。",
-          "mode": "thought"
         }
       ],
       "next": "p050_rizo_welcome"

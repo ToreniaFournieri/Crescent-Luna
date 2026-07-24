@@ -1012,10 +1012,6 @@ luna: また餌として役立たないようにして。
 system: 第三部
 system: リゾ
 system: 石灰岩の尾根 — 盗賊の野営地
-rizo: おかえり、ノックス。
-rizo: 見つけたものをすべて話せ。
-system: リゾの背後で、黒と銀の三日月が腰帯から下がっている。
-nox [thought]: 雨の印章だ。
 -> p050_rizo_welcome
 
 @scene part3_rizo_confrontation
