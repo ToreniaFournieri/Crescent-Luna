@@ -6,6 +6,7 @@ import { MessageBubble } from './components/MessageBubble'
 import { SuggestionBar } from './components/SuggestionBar'
 import { TypingIndicator } from './components/TypingIndicator'
 import { choose, restart, send } from './runtime/engine'
+import { localizeStoryState } from './runtime/localization'
 import { loadStoryState, saveStoryState } from './runtime/persistence'
 import type { CompiledStory, RuntimeChoice } from './types/story'
 
@@ -83,8 +84,9 @@ export default function App() {
     if (nextLanguage === language) return
     stopPlayback()
     window.localStorage.setItem('crescent-luna-language', nextLanguage)
+    const nextStory = stories[nextLanguage]
+    setState((current) => localizeStoryState(current, story, nextStory))
     setLanguage(nextLanguage)
-    setState(loadStoryState(stories[nextLanguage], nextLanguage) ?? restart(stories[nextLanguage]))
     setLocked(false)
     setSelected(null)
   }
