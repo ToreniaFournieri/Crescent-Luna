@@ -480,7 +480,7 @@ luna: Move.
 
 @prompt p024_reply “I will”
 
-* “follow Luna’s warning” => “I will follow Luna’s warning.” -> part2_escape_from_luna
+* “follow Luna’s warning” => “I will follow Luna’s warning.” -> p024_floor_breaks
 * “run away from her” => “I will run away from her.” -> p025_chase_begins
 * “stay and search for another exit” => “I will stay and search for another exit.” -> p024_floor_breaks
 
@@ -1564,6 +1564,12 @@ system: The seal was never a key to every door.
 system: Only a mark of authority.
 system: The temple does not recognize Nox as its bearer.
 
+@ending ending_buried_abundance “BURIED BY ABUNDANCE”
+system: Nox refuses to release what he carries.
+system: Gold, water, and stone grow heavier around him.
+temple: ABUNDANCE WITHOUT RESTRAINT BECOMES BURDEN.
+system: The chamber closes beneath the weight of everything he would not surrender.
+
 @scene p072_caravan_divides
 system: The Murid bandits lower their weapons.
 system: Some flee toward the caravan road.
@@ -2247,64 +2253,6 @@ nox: The other cannot.
 system: The High Priest lowers his ceremonial knife.
 -> p106_valley_drinks
 
-@scene p104_battle_beneath_crescent
-system: PART V
-system: CRESCENT LUNA
-system: Nox cuts through the altar rope.
-system: Guards rush toward him.
-system: Luna tears free before they reach the platform.
-luna: You chose the loud solution.
-nox: I was running out of quiet ones.
-system: Rizo appears at the temple gate with the Rain Seal.
-rizo: While everyone is distracted, I suggest we leave.
--> p104_reply
-
-@prompt p104_reply “I will”
-
-* “protect Luna from the guards” => “I will protect Luna.” -> p109_crescent_luna
-* “pursue Rizo and the Rain Seal” => “I will pursue Rizo.” -> ending_rizos_golden_bargain
-* “escape with Luna through the aqueduct” => “We escape now.” -> ending_beyond_felidian
-
-@scene p105_promised_rain
-system: PART V
-system: CRESCENT LUNA
-system: The crescent moon reaches the center of the temple arch.
-system: Luna kneels before the altar.
-luna: Nox.
-nox: I am here.
-luna: Do not let them call this my choice.
-system: The ceremonial bell rings once.
--> ending_promised_rain
-
-@ending ending_promised_rain “THE PROMISED RAIN”
-system: The ceremony ends before dawn.
-system: Luna does not leave the altar.
-system: Three days later, clouds gather above the Felidian valley.
-system: Rain falls across the fields.
-system: The priests call it a miracle.
-system: Nox never learns whether the rain was already coming.
-system: He only knows what it cost.
-
-@ending ending_false_treasure “THE FALSE TREASURE”
-system: Nox follows the image of a jewel deeper into the temple.
-system: Every shining crescent leads to another sealed chamber.
-system: The real Crescent Jade is taken to the altar while he searches.
-system: By the time Nox understands the word, the ceremony has begun.
-
-@ending ending_buried_abundance “BURIED BY ABUNDANCE”
-system: Nox refuses to release what he carries.
-system: Gold, water, and stone grow heavier around him.
-temple: ABUNDANCE WITHOUT RESTRAINT BECOMES BURDEN.
-system: The chamber closes beneath the weight of everything he would not surrender.
-
-@ending ending_rizos_golden_bargain “RIZO’S GOLDEN BARGAIN”
-system: Nox accepts Rizo’s partnership.
-system: Together they offer the Rain Seal, the temple records, and Luna’s location to the highest bidder.
-system: Priests, bandits, and frightened villagers fight for control of the temple.
-system: The final reservoir gate remains closed.
-system: Rizo dies surrounded by objects everyone considers valuable.
-system: Nox finally understands that a bargain can succeed and still destroy everyone involved.
-
 @scene p106_valley_drinks
 system: Nox grips the ancient control wheel.
 system: Luna braces herself beside him.
@@ -2681,139 +2629,6 @@ rizo: There must be another exit.
 system: Beyond the stone, the ceremonial bell rings.
 system: The treasure is real.
 system: So is the price.
-
-@scene p120_no_adventure_epilogue
-system: Nox never enters the dungeon.
-system: Rizo sends another scout the following morning.
-system: The caravan later disappears inside Felidian territory.
-system: Nox hears rumors of a black cat girl sacrificed during a drought.
-system: He never knows whether the stories are connected.
--> ending_no_adventure
-
-@ending ending_no_adventure “NO ADVENTURE BEGUN”
-system: Nox survives by refusing Rizo’s mission.
-system: He never meets Luna.
-system: He never discovers the truth of the Crescent Jade.
-system: Sometimes walking away is wisdom.
-system: Sometimes it merely leaves the danger for someone else.
-
-@scene p115_mouse_escaped_epilogue
-system: Nox walks alone toward Murid territory.
-system: He keeps Rizo’s false map folded inside his coat.
-system: Every night, he dreams of pale moths and a black tail disappearing into darkness.
-system: Weeks later, temple bells are heard across the border.
--> ending_mouse_escaped_alone
-
-@ending ending_mouse_escaped_alone “THE MOUSE WHO ESCAPED ALONE”
-system: Nox escapes the cave, the bandits, and the priests.
-system: No one follows him.
-system: He survives.
-system: He also learns that survival can become another kind of burden.
-system: Whenever rain falls, he wonders whether Luna lived to see it.
-
-@scene p116_price_of_rain_epilogue
-system: Rizo’s caravan crosses the Felidian border under priestly protection.
-system: Each wagon carries gold, grain, and water.
-system: Nox receives the full share Rizo promised.
-system: Behind them, the Temple of Abundance prepares the altar.
--> ending_price_of_rain
-
-@ending ending_price_of_rain “THE PRICE OF RAIN”
-rizo: You wanted treasure.
-rizo: Now you have it.
-system: A heavy purse rests in Nox’s hands.
-system: A ceremonial bell rings behind the caravan.
-system: No one looks back.
-system: Three days later, rain falls.
-system: Nox spends the rest of his life wondering whether the priests would have killed Luna even if the sky had already begun to change.
-
-@scene p117_false_treasure_epilogue
-system: Nox follows the green-glass crescent deeper into the temple.
-system: Every false relic opens another false chamber.
-system: By the time he escapes, the moon has reached the altar.
--> ending_false_treasure
-
-@ending ending_false_treasure “THE FALSE TREASURE”
-system: Nox finds dozens of imitation Crescent Jades.
-system: None is valuable.
-system: None is alive.
-system: The real Crescent Jade dies while he searches for an object that never existed.
-
-@scene p118_buried_abundance_epilogue
-system: Gold, water, and stone press inward around Nox.
-system: The temple mechanism continues adding weight to everything he refuses to release.
--> ending_buried_abundance
-
-@ending ending_buried_abundance “BURIED BY ABUNDANCE”
-temple: ABUNDANCE WITHOUT RESTRAINT BECOMES BURDEN.
-system: Nox is buried beneath everything he tried to keep.
-system: The temple remains dry.
-system: The altar remains ready.
-
-@scene ending_hunter_catches_mouse_epilogue
-system: Luna catches Nox before he reaches the bandit camp.
-system: She takes Rizo’s map and leaves him bound beside the underground stream.
-nox: Are you going to eat me?
-luna: No.
-nox: That sounded uncertain.
-luna: I am deciding whether you deserve to meet the priests.
--> ending_hunter_catches_mouse
-
-@ending ending_hunter_catches_mouse “THE HUNTER CATCHES THE MOUSE”
-system: Nox spends the night tied beneath a limestone shelf.
-system: By morning, Luna and Rizo are both gone.
-system: He escapes eventually.
-system: He never learns which one reached the temple first.
-
-@scene ending_one_mouse_caravan_epilogue
-system: Nox raises his knife against Rizo.
-system: The other bandits surround him.
-system: No black shadow falls from the ridge.
-system: No ally answers his call.
--> ending_one_mouse_caravan
-
-@ending ending_one_mouse_caravan “ONE MOUSE AGAINST THE CARAVAN”
-rizo: You survived the dungeon.
-rizo: You survived the cat.
-rizo: And you still learned nothing about choosing your battles.
-system: Courage without trust leaves Nox standing alone.
-
-@scene ending_airless_tomb_epilogue
-system: Nox follows Rizo’s three-circle mark.
-system: His lantern shrinks to a blue point.
-system: Pale moths gather behind him, where fresh air still enters.
--> ending_airless_tomb
-
-@ending ending_airless_tomb “THE AIRLESS TOMB”
-system: The lantern dies first.
-system: Nox understands the clue only after he no longer has enough air to return.
-
-@scene ending_falling_bell_epilogue
-system: The bronze bell rings above Nox.
-system: A mechanism releases in the ceiling.
--> ending_falling_bell
-
-@ending ending_falling_bell “BENEATH THE BELL”
-system: Nox mistakes a warning for decoration.
-system: The dungeon does not offer the lesson twice.
-
-@scene ending_buried_scout_epilogue
-system: White veins spread through the limestone.
-system: Nox strikes the wall one final time.
--> ending_buried_scout
-
-@ending ending_buried_scout “THE BURIED SCOUT”
-system: Rizo’s map remains beneath the rubble.
-system: Another scout may someday find it.
-system: The three-circle marks will still say the route is safe.
-
-@scene ending_crushed_pedestal_epilogue
-system: Nox forces the crescent mechanism downward.
-system: The ceiling closes around the empty pedestal.
--> ending_crushed_pedestal
-
-@ending ending_crushed_pedestal “THE EMPTY PEDESTAL”
-system: Nox dies trying to open a treasure chamber that never contained a jewel.
 
 @scene credits_crescent_luna
 system: CRESCENT LUNA
