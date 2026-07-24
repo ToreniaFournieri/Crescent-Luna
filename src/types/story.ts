@@ -5,4 +5,7 @@ export type RuntimeNode =
   | { kind: 'prompt'; id: string; draft: string; choices: RuntimeChoice[] }
   | { kind: 'ending'; id: string; title: string; messages: RuntimeMessage[]; next: null }
 export interface CompiledStory { formatVersion: 1; storyId: string; revision: string; entry: string; nodes: Record<string, RuntimeNode> }
-export interface ChatMessage extends RuntimeMessage { id: string }
+export type MessageSource =
+  | { kind: 'node'; nodeId: string; messageIndex: number }
+  | { kind: 'choice'; nodeId: string; choiceId: string }
+export interface ChatMessage extends RuntimeMessage { id: string; source?: MessageSource }
