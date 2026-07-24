@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "storyId": "crescent-luna",
-  "revision": "07413e2a1a39",
+  "revision": "579e313ad4f0",
   "entry": "part1_dungeon",
   "nodes": {
     "part1_dungeon": {
@@ -3823,23 +3823,6 @@
         {
           "speaker": "system",
           "text": "Limestone Ridge — Bandit Camp"
-        },
-        {
-          "speaker": "rizo",
-          "text": "Welcome back, Nox."
-        },
-        {
-          "speaker": "rizo",
-          "text": "Tell us everything you found."
-        },
-        {
-          "speaker": "system",
-          "text": "Behind Rizo, a black-and-silver crescent hangs from his belt."
-        },
-        {
-          "speaker": "nox",
-          "text": "The Rain Seal.",
-          "mode": "thought"
         }
       ],
       "next": "p050_rizo_welcome"
