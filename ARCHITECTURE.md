@@ -31,7 +31,9 @@ Start with a small, project-specific text format rather than exposing the
 runtime TypeScript structure to writers. Markdown-like blocks make dialogue
 read naturally in diffs, while explicit directives keep parsing predictable.
 
-An illustrative source file could look like this:
+The complete current conversation is available as a human-authored example in
+[`story/sample.story`](story/sample.story). A shortened source file looks like
+this:
 
 ```text
 @scene opening
@@ -65,6 +67,9 @@ already has:
 - an unconditional `-> target` transition;
 - predictive suggestions with an optional completed sentence; and
 - optional delays expressed as metadata, not embedded JavaScript.
+
+Delayed dialogue uses `speaker [delay=milliseconds]: text`, as demonstrated by
+the final line of the chase ending in the sample.
 
 Avoid a general-purpose expression language initially. When story variables
 are needed, add a small declarative condition/effect syntax with an explicit
