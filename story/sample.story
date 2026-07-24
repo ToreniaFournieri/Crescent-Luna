@@ -504,12 +504,538 @@ luna: We are not finished.
 nox [thought]: The entrance is gone.
 nox [thought]: The cat is still here.
 system: Somewhere ahead, pale moths flutter toward moving air.
-@scene part2_escape_from_luna
-system: PART II
-system: ESCAPE FROM LUNA
-system: Limestone Cave — Unknown depth
-system: Nox follows Luna into the underground passage.
-luna: Stay close, little mouse.
-nox [thought]: The entrance is gone.
-nox [thought]: For now, Luna is the only guide I have.
-system: Pale moths flutter ahead toward moving air.
+-> p025_reply
+
+@prompt p025_reply “I should”
+
+* “follow the moths” => “I should follow the moths.” -> p028_moth_passage
+* “run toward the loudest echo” => “I should run toward the loudest echo.” -> p027_echoing_tunnel
+* “ask Luna what she wants” => “I should ask Luna what she wants.” -> p026_stop_running
+
+@scene p026_stop_running
+system: Nox turns without moving closer.
+nox: What do you want?
+luna: For you to stop running.
+nox: That is not an answer.
+luna: It is the first answer you need.
+system: Luna’s eyes move toward the ceiling above Nox.
+luna: Do not step backward.
+-> p026_reply
+
+@prompt p026_reply “I”
+
+* “will trust that warning” => “I will trust that warning.” -> p029_warning_returned
+* “think you are trying to catch me” => “I think you are trying to catch me.” -> p027_echoing_tunnel
+* “want you to prove it” => “I want you to prove it.” -> p026_proof
+
+@scene p026_proof
+luna: Look above you.
+system: White mineral veins cross the limestone ceiling.
+nox [thought]: The same weak stone from the dungeon.
+luna: One more step and it falls.
+nox: You could have let it.
+luna: I still need answers.
+-> p029_warning_returned
+
+@scene p027_echoing_tunnel
+system: Nox runs into a wide tunnel.
+system: Every footstep returns from several directions.
+cave: Tap.
+cave: Tap.
+cave: Tap.
+nox [thought]: The echoes make it impossible to hear Luna.
+system: A black shape moves between the stalagmites.
+-> p027_reply
+
+@prompt p027_reply “I will”
+
+* “hide and remain completely still” => “I will hide and remain completely still.” -> p030_stillness
+* “keep running through the echoes” => “I will keep running through the echoes.” -> p031_hunters_leap
+* “throw stones to confuse Luna” => “I will throw stones to confuse Luna.” -> p027_stones
+
+@scene p027_stones
+system: Nox throws stones into three side passages.
+cave: Clack.
+cave: Clack.
+cave: Clack.
+system: Luna stops.
+luna: Clever.
+system: Her voice comes from directly behind Nox.
+luna: But you forgot your own breathing.
+-> p031_hunters_leap
+
+@scene p028_moth_passage
+system: Nox follows the pale moths into a narrow passage.
+system: Cool air brushes his whiskers.
+system: The passage bends sharply around a wall of white-veined limestone.
+system: Luna’s footsteps grow closer.
+-> p028_reply
+
+@prompt p028_reply “I can”
+
+* “follow the airflow deeper” => “I can follow the airflow deeper.” -> p029_warning_returned
+* “take the wider side tunnel” => “I can take the wider side tunnel.” -> p031_hunters_leap
+* “collapse the passage behind me” => “I can collapse the passage behind me.” -> p033_buried_together
+
+@scene p029_warning_returned
+system: Nox moves around the weak limestone.
+system: Luna follows through the narrow passage.
+system: A crack spreads beneath her next step.
+nox [thought]: She is watching me, not the floor.
+-> p029_reply
+
+@prompt p029_reply “I should”
+
+* “warn Luna about the crack” => “I should warn Luna about the crack.” -> p032_falling_limestone
+* “say nothing and let her fall” => “I should say nothing and let her fall.” -> p038_lone_mouse_route
+* “use the weak stone to trap her” => “I should use the weak stone to trap her.” -> p033_buried_together
+
+@scene p030_stillness
+system: Nox presses himself between two stalagmites.
+system: He stops moving.
+system: He stops breathing.
+system: Luna walks slowly into view.
+luna: I can hear your heart.
+nox [thought]: She is close enough to touch me.
+system: Luna looks past him toward a dark opening.
+luna: Something else is following us.
+-> p030_reply
+
+@prompt p030_reply “I will”
+
+* “remain still and listen” => “I will remain still and listen.” -> p034_close_enough
+* “run while she is distracted” => “I will run while she is distracted.” -> p031_hunters_leap
+* “ask what is following us” => “I will ask what is following us.” -> p034_close_enough
+
+@scene p031_hunters_leap
+system: Nox runs toward an underground stream.
+system: Luna springs from a ledge above him.
+luna: Stop!
+system: Her shadow covers the water.
+-> p031_reply
+
+@prompt p031_reply “I will”
+
+* “duck beneath the limestone shelf” => “I will duck beneath the limestone shelf.” -> p035_narrow_ledge
+* “jump across the stream” => “I will jump across the stream.” -> p036_underground_stream
+* “turn and face her” => “I will turn and face her.” -> p034_close_enough
+
+@scene p032_falling_limestone
+nox: Luna! The floor!
+system: Luna twists aside.
+system: The stone beneath her collapses.
+system: One of her legs becomes trapped between two slabs.
+luna: Do not come closer.
+nox: You are stuck.
+luna: I noticed.
+system: Cracks continue spreading around her.
+-> p032_reply
+
+@prompt p032_reply “I will”
+
+* “help free her leg” => “I will help free her leg.” -> p037_debt_between_enemies
+* “leave before the ceiling falls” => “I will leave before the ceiling falls.” -> p038_lone_mouse_route
+* “ask her to promise not to chase me” => “I will ask her to promise not to chase me.” -> p032_bargain
+
+@scene p032_bargain
+nox: Promise you will not chase me.
+luna: Help me first.
+nox: That is not how bargains work.
+luna: It is how this one works.
+system: Another stone falls beside Luna.
+-> p032_bargain_reply
+
+@prompt p032_bargain_reply “I”
+
+* “will help without a promise” => “I will help without a promise.” -> p037_debt_between_enemies
+* “need your promise first” => “I need your promise first.” -> p038_lone_mouse_route
+* “will leave you here” => “I will leave you here.” -> p038_lone_mouse_route
+
+@scene p033_buried_together
+system: Nox strikes the white-veined wall.
+cave: CRACK.
+system: The passage collapses between him and Luna.
+system: A second fracture opens beneath Nox.
+system: Both of them fall into the same lower chamber.
+luna: You tried to bury me.
+nox: It did not work.
+luna: I noticed that too.
+system: A slab pins Luna’s tail beneath the rubble.
+-> p033_reply
+
+@prompt p033_reply “I will”
+
+* “dig her free” => “I will dig her free.” -> p037_debt_between_enemies
+* “escape while she is trapped” => “I will escape while she is trapped.” -> p038_lone_mouse_route
+* “take her crescent clasp” => “I will take her crescent clasp.” -> p040_no_trust
+
+@scene p034_close_enough
+system: Nox and Luna face each other across a narrow stream.
+system: Neither moves.
+luna: Now answer me.
+luna: Why did Rizo send you?
+-> p034_reply
+
+@prompt p034_reply “He sent me to”
+
+* “find the Crescent Jade” => “He sent me to find the Crescent Jade.” -> p039_honest_thief
+* “make sure the route was safe” => “He sent me to make sure the route was safe.” -> p039_honest_thief
+* “rescue someone from the dungeon” => “He sent me to rescue someone from the dungeon.” -> p040_no_trust
+
+@scene p035_narrow_ledge
+system: Nox squeezes beneath a low limestone shelf.
+system: Luna cannot follow without crawling.
+system: A climbing rope hangs across a deep crack ahead.
+nox [thought]: If I cut it, she cannot cross.
+system: The stone beneath Luna’s side of the crack begins to crumble.
+-> p035_reply
+
+@prompt p035_reply “I will”
+
+* “leave the rope for Luna” => “I will leave the rope for Luna.” -> p037_debt_between_enemies
+* “cut the rope behind me” => “I will cut the rope behind me.” -> p038_lone_mouse_route
+* “wait and ask her to stop chasing” => “I will wait and ask her to stop chasing.” -> p034_close_enough
+
+@scene p036_underground_stream
+system: Nox lands in cold, fast-moving water.
+system: The current carries him away from Luna.
+system: Two routes appear ahead.
+system: Fresh-air bubbles rise beside a submerged opening.
+system: Faint orange light flickers above a rocky slope.
+nox [thought]: Air below.
+nox [thought]: Torchlight above.
+-> p036_reply
+
+@prompt p036_reply “I will follow”
+
+* “the fresh-air bubbles” => “I will follow the fresh-air bubbles.” -> p041_water_beneath_stone
+* “the torchlight” => “I will follow the torchlight.” -> p042_bandit_camp
+* “the strongest current” => “I will follow the strongest current.” -> p036_waterfall
+
+@scene p036_waterfall
+system: The current accelerates.
+nox: That was a mistake.
+system: Nox falls over a short underground waterfall.
+system: He lands beside a narrow passage leading upward.
+system: Voices echo beyond it.
+-> p042_bandit_camp
+
+@scene p037_debt_between_enemies
+system: Nox pulls the last stone away.
+system: Luna frees herself and steps back.
+luna: You had time to escape.
+nox: You warned me first.
+luna: That does not make us even.
+nox: It makes us less uneven.
+system: Luna touches the broken clasp at her neck.
+-> p037_reply
+
+@prompt p037_reply “That crescent”
+
+* “belongs to the temple” => “That crescent belongs to the temple.” -> p043_rain_seal
+* “is the Crescent Jade” => “That crescent is the Crescent Jade.” -> p037_jade
+* “must be valuable” => “That crescent must be valuable.” -> p040_no_trust
+
+@scene p037_jade
+luna: No.
+luna: This only marked me for the ceremony.
+nox: Marked you?
+luna: You truly do not know what Rizo is searching for.
+system: Luna looks toward the upper passages.
+luna: But he has something worse than your map.
+-> p043_rain_seal
+
+@scene p038_lone_mouse_route
+system: Nox leaves Luna behind.
+system: Her voice fades beneath the sound of moving water.
+luna: Run, then.
+luna: See who is waiting outside.
+system: Ahead, torchlight flickers against the cave wall.
+-> p038_reply
+
+@prompt p038_reply “I will”
+
+* “follow the torchlight” => “I will follow the torchlight.” -> p042_bandit_camp
+* “search for another exit” => “I will search for another exit.” -> p044_false_exit
+* “turn back toward Luna” => “I will turn back toward Luna.” -> p047_last_test
+
+@scene p039_honest_thief
+nox: I came to steal the Crescent Jade.
+nox: I thought it was a jewel.
+luna: That does not make you innocent.
+nox: I know.
+system: Luna studies him carefully.
+luna: Show me the map.
+-> p039_reply
+
+@prompt p039_reply “I will”
+
+* “give her Rizo’s map” => “I will give her Rizo’s map.” -> p043_rain_seal
+* “show it without letting go” => “I will show it without letting go.” -> p039_half_trust
+* “say I lost it” => “I will say I lost it.” -> p040_no_trust
+
+@scene p039_half_trust
+system: Nox holds out the map but keeps one hand on it.
+system: Luna reads the fresh arrows.
+luna: He changed the route.
+nox: You have seen these markings?
+luna: I have seen his work.
+luna: Give it to me.
+-> p039_half_reply
+
+@prompt p039_half_reply “I”
+
+* “will let go” => “I will let go.” -> p043_rain_seal
+* “need it to escape” => “I need it to escape.” -> p040_no_trust
+* “want an answer first” => “I want an answer first.” -> p043_rain_seal
+
+@scene p040_no_trust
+system: Luna’s expression becomes still.
+luna: You lie badly.
+nox: I am trying to survive.
+luna: So is everyone.
+luna: That does not make every choice equal.
+system: Luna steps aside from the fresh-air passage.
+luna: Go.
+nox: You are letting me leave?
+luna: I am letting you discover where your map leads.
+-> p040_reply
+
+@prompt p040_reply “I will”
+
+* “take the visible exit” => “I will take the visible exit.” -> p042_bandit_camp
+* “ask for one more chance” => “I will ask for one more chance.” -> p047_last_test
+* “run before she changes her mind” => “I will run before she changes her mind.” -> p044_false_exit
+
+@scene p041_water_beneath_stone
+system: Nox dives beneath the limestone shelf.
+system: The passage rises into a hidden air pocket.
+system: Pale moths cluster near a crack leading upward.
+system: Through the stone, Nox hears Murid voices.
+bandit [distant]: Rizo said the scout should have opened it by now.
+bandit [distant]: If he survived.
+nox [thought]: They are here.
+nox [thought]: They never intended to rescue me.
+-> p041_reply
+
+@prompt p041_reply “I should”
+
+* “return and warn Luna” => “I should return and warn Luna.” -> p045_hidden_vent
+* “climb toward the bandits” => “I should climb toward the bandits.” -> p042_bandit_camp
+* “listen for Rizo’s plan” => “I should listen for Rizo’s plan.” -> p041_overheard
+
+@scene p041_overheard
+rizo [distant]: Once the little fool clears the route, we take the girl.
+bandit [distant]: And the Jade?
+rizo [distant]: The girl will lead us to it.
+bandit [distant]: What about the Rain Seal?
+rizo [distant]: Keep your voice down.
+nox [thought]: Rain Seal.
+nox [thought]: Luna needs to hear this.
+-> p045_hidden_vent
+
+@scene p042_bandit_camp
+system: Nox climbs through a narrow opening.
+system: Daylight shines beyond the limestone ridge.
+system: Rizo and the Murid bandits wait beside a second entrance.
+system: Weapons, ropes, and cages are arranged around the camp.
+rizo: Nox.
+rizo: You survived.
+system: Rizo smiles as though this was always the plan.
+-> p042_reply
+
+@prompt p042_reply “I”
+
+* “found the route” => “I found the route.” -> part3_rizo_welcome
+* “know you lied to me” => “I know you lied to me.” -> part3_rizo_confrontation
+* “need to observe before speaking” => “I need to observe before speaking.” -> part3_camp_from_above
+
+@scene p043_rain_seal
+luna: Rizo stole a ceremonial seal from a Felidian convoy.
+luna: Black stone. Silver edge. A crescent cut through the center.
+nox: I saw it hanging from his belt.
+system: Luna’s claws extend.
+luna: The Rain Seal opens the Temple of Abundance.
+nox: And the Crescent Jade is inside?
+luna: You still think this is about treasure.
+-> p043_reply
+
+@prompt p043_reply “I will help you”
+
+* “recover the Rain Seal” => “I will help you recover the Rain Seal.” -> p046_temporary_truce
+* “find the Crescent Jade” => “I will help you find the Crescent Jade.” -> p040_no_trust
+* “if you promise me a reward” => “I will help you if you promise me a reward.” -> p040_no_trust
+
+@scene p044_false_exit
+system: Nox follows a rising passage toward daylight.
+system: Fresh boot prints cover the damp ground.
+system: A rope has been fixed to the final climb.
+nox [thought]: Someone prepared this exit recently.
+system: Murid voices come from above.
+-> p044_reply
+
+@prompt p044_reply “I should”
+
+* “climb into the bandit camp” => “I should climb into the bandit camp.” -> p042_bandit_camp
+* “turn back toward Luna” => “I should turn back toward Luna.” -> p047_last_test
+* “hide and observe first” => “I should hide and observe first.” -> part3_camp_from_above
+
+@scene p045_hidden_vent
+system: Nox returns through the flooded passage.
+system: Luna waits beside the stream.
+luna: You found the exit.
+nox: I found Rizo.
+luna: That is not the same thing.
+nox: He has cages.
+nox: And he has the Rain Seal.
+system: Luna becomes completely still.
+-> p045_reply
+
+@prompt p045_reply “I came back because”
+
+* “you needed to know” => “I came back because you needed to know.” -> p046_temporary_truce
+* “I cannot fight him alone” => “I came back because I cannot fight him alone.” -> p046_temporary_truce
+* “I want a share of the reward” => “I came back because I want a share of the reward.” -> p040_no_trust
+
+@scene p046_temporary_truce
+luna: You will lead me to Rizo.
+nox: And then we are even?
+luna: No.
+nox: Then what happens after?
+luna: After we recover the Rain Seal, I decide whether you are a thief, a prisoner, or something less inconvenient.
+nox: That is not very reassuring.
+luna: It is more honest than Rizo.
+-> p046_reply
+
+@prompt p046_reply “We should”
+
+* “travel together” => “We should travel together.” -> p048_within_reach
+* “keep our distance” => “We should keep our distance.” -> p047_last_test
+* “have you walk in front” => “We should have you walk in front.” -> p047_last_test
+
+@scene p047_last_test
+system: Luna blocks the narrow route back toward the surface.
+luna: Put down the knife.
+nox: You still have claws.
+luna: I cannot put those down.
+nox: Convenient.
+luna: Decide.
+-> p047_reply
+
+@prompt p047_reply “I will”
+
+* “put down the knife” => “I will put down the knife.” -> p048_within_reach
+* “pretend to surrender” => “I will pretend to surrender.” -> p049_broken_truce
+* “keep it but lower the blade” => “I will keep it but lower the blade.” -> p047_compromise
+
+@scene p047_compromise
+system: Nox lowers the knife without releasing it.
+system: Luna watches his hand.
+luna: Not trust.
+nox: Not yet.
+luna: Honest enough.
+-> p048_within_reach
+
+@scene p048_within_reach
+system: Nox walks beside Luna through the limestone passage.
+system: Her claws remain close enough to reach him.
+system: For the first time, he does not run.
+luna: Rizo sent you first because he thought you were expendable.
+nox: I know.
+luna: And you still intended to steal from us.
+nox: I know that too.
+luna: Good.
+nox: Why is that good?
+luna: Because excuses are harder to trust than guilt.
+system: Torchlight appears ahead.
+-> p048_reply
+
+@prompt p048_reply “Rizo”
+
+* “has to be stopped” => “Rizo has to be stopped.” -> part3_enemy_of_enemy
+* “will not expect us together” => “Rizo will not expect us together.” -> part3_enemy_of_enemy
+* “may still forgive me” => “Rizo may still forgive me.” -> p048_doubt
+
+@scene p048_doubt
+luna: Forgive you?
+luna: He sent you into a sealed dungeon.
+nox: The caravan was my home.
+luna: A cage can feel like home if you have never seen the door.
+system: Rizo’s camp is visible through the final crack.
+-> p048_doubt_reply
+
+@prompt p048_doubt_reply “I”
+
+* “will face him with you” => “I will face him with you.” -> part3_enemy_of_enemy
+* “need to speak to him alone” => “I need to speak to him alone.” -> part3_rizo_confrontation
+* “want to observe the camp first” => “I want to observe the camp first.” -> part3_camp_from_above
+
+@scene p049_broken_truce
+system: Nox lowers the knife.
+system: Then he lunges toward Luna’s wrist.
+system: Luna catches his arm before the blade moves halfway.
+luna: There you are.
+nox: Let go.
+luna: You wanted me to trust you first.
+system: Her grip tightens.
+-> p049_reply
+
+@prompt p049_reply “I”
+
+* “was afraid” => “I was afraid.” -> ending_hunter_catches_mouse
+* “can still help you” => “I can still help you.” -> ending_hunter_catches_mouse
+* “will never trust a cat” => “I will never trust a cat.” -> ending_hunter_catches_mouse
+
+@ending ending_hunter_catches_mouse “THE HUNTER CATCHES THE MOUSE”
+luna: Fear keeps prey alive.
+luna: Betrayal merely makes the chase shorter.
+system: Nox’s knife falls into the stream.
+system: This time, Luna does not let him run.
+
+@scene part3_enemy_of_enemy
+system: PART III
+system: RIZO
+system: Limestone Ridge — Bandit Camp
+system: Nox leads Luna toward the hidden entrance.
+nox: Rizo has at least eight bandits.
+luna: Nine.
+nox: How do you know?
+luna: I can hear the one pretending not to be afraid.
+system: Luna looks at Nox.
+luna: Stay behind me when the fighting begins.
+nox: I thought I was leading.
+luna: You led me here.
+luna: Try not to become useful as bait again.
+-> p052_enemy_of_enemy
+
+@scene part3_rizo_welcome
+system: PART III
+system: RIZO
+system: Limestone Ridge — Bandit Camp
+rizo: Welcome back, Nox.
+rizo: Tell us everything you found.
+system: Behind Rizo, a black-and-silver crescent hangs from his belt.
+nox [thought]: The Rain Seal.
+-> p050_rizo_welcome
+
+@scene part3_rizo_confrontation
+system: PART III
+system: RIZO
+system: Limestone Ridge — Bandit Camp
+nox: You changed the map.
+rizo: And yet here you are.
+nox: You sealed the entrance behind me.
+rizo: I prevented the danger from following you out.
+system: The bandits begin surrounding Nox.
+-> p054_one_mouse_against_rizo
+
+@scene part3_camp_from_above
+system: PART III
+system: RIZO
+system: Limestone Ridge — Above the Bandit Camp
+system: Nox hides among the rocks overlooking the camp.
+system: Rizo speaks with two armed bandits beside an iron cage.
+rizo: Once the girl appears, take her alive.
+bandit: And Nox?
+rizo: If he survived, he has already served his purpose.
+-> p051_camp_from_above
