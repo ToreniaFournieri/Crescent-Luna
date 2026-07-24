@@ -1655,3 +1655,652 @@ system: A kneeling girl beneath the empty place.
 nox [thought]: The gifts are not all objects.
 nox [thought]: They are things the valley gives up.
 -> p078_door_without_shadow
+
+@scene p077_procession_white_robes
+system: White-robed priests descend the temple stair.
+system: Felidian guards surround Nox and Luna.
+system: Each priest carries an empty silver bowl.
+priest: The Crescent Jade has returned.
+luna: I returned for the Rain Seal.
+priest: The seal has already opened the temple.
+priest: The gods have accepted the sign.
+nox [thought]: They are speaking about Luna as though she were not here.
+-> p077_reply
+
+@prompt p077_reply “I will”
+
+* “ask what happens to Luna” => “What happens to Luna?” -> p083_meaning_of_jade
+* “remain silent and observe” => “I will remain silent and observe.” -> p081_high_priest
+* “tell them Rizo has the Rain Seal” => “Rizo has the Rain Seal.” -> p077_rizo
+
+@scene p077_rizo
+priest: The thief entered before you.
+guard: We are searching the inner halls.
+luna: Then stop chanting and find him.
+priest: The ceremony is more important than one bandit.
+nox: He can open your sacred chambers.
+priest: Only those the temple accepts can open what matters.
+system: A bell rings deep within the stone.
+temple: TING.
+priest: Come.
+-> p081_high_priest
+
+@scene p078_door_without_shadow
+system: Nox and Luna reach a circular door.
+system: Three pale stones are set into its surface.
+system: The first shines brightly and casts a long shadow.
+system: The second is dull and casts no shadow.
+system: The third flickers whenever Nox moves.
+nox [thought]: Real moonstone did not cast a shadow.
+luna: Choose carefully.
+-> p078_reply
+
+@prompt p078_reply “I will press”
+
+* “the stone without a shadow” => “I will press the stone without a shadow.” -> p084_hall_three_hungers
+* “the brightest stone” => “I will press the brightest stone.” -> p085_false_crescent
+* “the flickering stone” => “I will press the flickering stone.” -> p085_false_crescent
+
+@scene p079_rizos_triggered_trap
+system: Rizo’s footprints lead across a narrow tiled hall.
+system: Several tiles have sunk beneath his weight.
+system: A torn piece of his coat hangs from a wall blade.
+nox [thought]: He survived.
+nox [thought]: That does not mean he chose correctly.
+system: Untouched crescent tiles form a second path.
+-> p079_reply
+
+@prompt p079_reply “I will”
+
+* “follow Rizo’s exact footsteps” => “I will follow Rizo’s exact footsteps.” -> p084_hall_three_hungers
+* “inspect the mechanism first” => “I will inspect the mechanism first.” -> p079_inspection
+* “take the untouched crescent path” => “I will take the untouched crescent path.” -> p086_untouched_floor
+
+@scene p079_inspection
+system: Thin grooves connect the sunken tiles to the wall blades.
+system: The blades have already discharged.
+system: The untouched crescent tiles connect to holes in the ceiling.
+nox [thought]: Rizo triggered the visible trap.
+nox [thought]: The untouched path may still be armed.
+-> p079_inspection_reply
+
+@prompt p079_inspection_reply “The safer path is”
+
+* “where Rizo already triggered the blades” => “The safer path is where Rizo already triggered the blades.” -> p084_hall_three_hungers
+* “the untouched crescent tiles” => “The safer path is the untouched crescent tiles.” -> p086_untouched_floor
+* “neither path” => “Neither path is safe.” -> p079_wall_route
+
+@scene p079_wall_route
+system: Nox studies the carved wall.
+system: A maintenance ledge runs above both trapped paths.
+luna: Small enough?
+nox: For me.
+luna: Of course.
+system: Nox climbs above the mechanisms and releases the door from inside.
+-> p084_hall_three_hungers
+
+@scene p080_dry_reservoir
+system: The aqueduct opens into a vast underground chamber.
+system: Mineral lines mark the walls far above Nox’s head.
+system: The reservoir is almost completely dry.
+system: Stone gates divide several deeper channels.
+luna: There should be water here.
+nox: There was.
+system: Rows of carved symbols cover a control wall.
+-> p080_reply
+
+@prompt p080_reply “I will”
+
+* “study the water markings” => “I will study the water markings.” -> p087_ancient_water_script
+* “search the dry basin for valuables” => “I will search the dry basin for valuables.” -> p082_weight_of_gold
+* “climb toward the priestly chambers” => “I will climb toward the priestly chambers.” -> p081_high_priest
+
+@scene p081_high_priest
+system: The procession enters a chamber open to the night sky.
+system: A thin crescent moon hangs above the temple.
+system: The High Priest waits beside an empty altar.
+priest: Luna.
+luna: Do not call me that as though you missed me.
+priest: Every village in the valley has prayed for your return.
+luna: They prayed for rain.
+priest: They have learned there is no difference.
+-> p081_reply
+
+@prompt p081_reply “I will”
+
+* “challenge the sacrifice” => “You intend to kill her.” -> p088_one_life_thousand
+* “ask why the rain has failed” => “Why has the rain failed?” -> p089_drought_ledger
+* “ask whether Luna volunteered” => “Did Luna choose this?” -> p081_choice
+
+@scene p081_choice
+system: The High Priest looks at Luna.
+priest: She was chosen at birth.
+nox: That is not the same thing.
+priest: A life may be chosen before its owner understands its purpose.
+luna: That is convenient for the people doing the choosing.
+-> p088_one_life_thousand
+
+@scene p082_weight_of_gold
+system: Nox lifts one of the golden offerings.
+system: It feels lighter than expected.
+system: As he approaches the next doorway, the bowl grows heavier.
+nox [thought]: It is gaining weight.
+system: The stone door behind him begins to close.
+temple: GIVE WHAT YOU CARRY.
+-> p082_reply
+
+@prompt p082_reply “I will”
+
+* “drop the gold” => “I will drop the gold.” -> p084_hall_three_hungers
+* “carry it through the door” => “I will carry it through the door.” -> ending_buried_abundance
+* “give it to Luna” => “I will give it to Luna.” -> p082_luna
+
+@scene p082_luna
+system: Luna does not take the bowl.
+luna: You picked it up.
+nox: It is too heavy.
+luna: Then perhaps it belongs to you.
+nox [thought]: The temple is not testing strength.
+nox [thought]: It is testing whether I can let go.
+-> p082_reply
+
+@scene p083_meaning_of_jade
+nox: What does “Crescent Jade” mean?
+priest: A pure life offered beneath the crescent moon.
+nox: A person.
+priest: A blessing.
+luna: A girl.
+system: The priest does not look at Luna.
+priest: The valley cannot survive another season without rain.
+-> p083_reply
+
+@prompt p083_reply “The Crescent Jade”
+
+* “is Luna” => “The Crescent Jade is Luna.” -> p090_lunas_confession
+* “must still be a physical relic” => “The Crescent Jade must still be a physical relic.” -> p085_false_crescent
+* “is a title the priests imposed on her” => “The Crescent Jade is a title the priests imposed on her.” -> p090_lunas_confession
+
+@scene p084_hall_three_hungers
+system: Three doors stand beneath three carvings.
+system: The first shows a bowl overflowing with water.
+system: The second shows a mountain of gold.
+system: The third shows an open road beneath the moon.
+temple: CHOOSE WHAT YOU DESIRE.
+nox [thought]: Water.
+nox [thought]: Wealth.
+nox [thought]: Freedom.
+-> p084_reply
+
+@prompt p084_reply “I choose”
+
+* “water” => “I choose water.” -> p087_ancient_water_script
+* “gold” => “I choose gold.” -> p082_weight_of_gold
+* “freedom” => “I choose freedom.” -> p091_door_of_release
+
+@scene p085_false_crescent
+system: Nox presses the shining crescent.
+system: The stone breaks open.
+system: A green glass imitation lies inside.
+nox: The Crescent Jade.
+luna: No.
+system: The chamber doors slam shut.
+temple: FALSE OFFERING.
+-> ending_false_treasure
+
+@scene p086_untouched_floor
+system: Nox steps onto the untouched crescent tiles.
+temple: TING.
+system: Stone shutters fall behind him.
+system: Water begins pouring from openings in the wall.
+nox: I thought the untouched path was safe.
+luna: Untouched often means untested.
+system: A balancing lever stands beyond the rising water.
+-> p086_reply
+
+@prompt p086_reply “I will”
+
+* “test the floor with a loose stone” => “I will test the floor with a loose stone.” -> p092_counterweight_chamber
+* “run across before the water rises” => “I will run across before the water rises.” -> p093_flooded_shaft
+* “search for a maintenance release” => “I will search for a maintenance release.” -> p092_counterweight_chamber
+
+@scene p087_ancient_water_script
+system: The control wall shows channels, basins, and seasonal marks.
+system: One symbol repeats beside every major gate.
+system: It resembles the girl beneath the moon from the dungeon mural.
+nox [thought]: The same figure.
+luna: The priests say it means sacrifice.
+nox: It may mean operator.
+-> p087_reply
+
+@prompt p087_reply “I will”
+
+* “compare it with the dungeon mural” => “I will compare it with the dungeon mural.” -> p094_first_crescent_jade
+* “dismiss it as priestly writing” => “I will dismiss it as priestly writing.” -> p089_drought_ledger
+* “trace the channels toward the deepest gate” => “I will trace the channels toward the deepest gate.” -> p092_counterweight_chamber
+
+@scene p088_one_life_thousand
+nox: You intend to kill her.
+priest: We intend to save the valley.
+nox: By murdering one girl.
+priest: By accepting one death before thousands follow.
+system: The High Priest gestures toward the dry valley below.
+priest: Wells fail.
+priest: Children drink mud.
+priest: Farmers burn seed grain for warmth.
+priest: Tell me which life I should value first.
+-> p088_reply
+
+@prompt p088_reply “I will”
+
+* “demand another solution” => “There must be another solution.” -> p094_first_crescent_jade
+* “offer Rizo instead” => “Sacrifice Rizo instead.” -> p095_rizo_at_altar
+* “say Luna owes them nothing” => “Luna owes you nothing.” -> p090_lunas_confession
+
+@scene p089_drought_ledger
+system: The High Priest opens a thick ledger.
+system: Each page records a village well, crop yield, and number of deaths.
+priest: We have counted every remaining day.
+priest: The valley has perhaps two months.
+nox: And you believe Luna’s death will bring rain.
+priest: The rites have preceded rain before.
+nox: Preceded.
+nox: Not caused.
+-> p089_reply
+
+@prompt p089_reply “I will”
+
+* “accept the priests’ reasoning” => “One life may save the valley.” -> p096_lunas_choice
+* “search for older records” => “I want to see the oldest records.” -> p094_first_crescent_jade
+* “accuse the priest of lying” => “You know the sacrifice will not work.” -> p089_accusation
+
+@scene p089_accusation
+priest: I know only that doing nothing will fail.
+priest: Certainty is a luxury of those who are not responsible.
+luna: And sacrifice is a luxury of those who will not be sacrificed.
+system: The High Priest closes the ledger.
+-> p096_lunas_choice
+
+@scene p090_lunas_confession
+system: Luna looks toward the altar.
+luna: They chose me when I was a child.
+luna: They taught me the prayers before I learned why everyone cried when I entered a room.
+nox: Why did you run?
+luna: Because I wanted to live.
+system: Luna’s claws curl into her palms.
+luna: And because part of me still believes that makes me selfish.
+-> p090_reply
+
+@prompt p090_reply “I will”
+
+* “promise she will not die” => “I will not let them kill you.” -> p097_promise_without_proof
+* “ask whether she would choose the sacrifice” => “Would you choose it now?” -> p096_lunas_choice
+* “tell her the choice belongs to her” => “The choice belongs to you.” -> p090_choice_belongs
+
+@scene p090_choice_belongs
+luna: Does it?
+luna: If I leave, children may die.
+luna: If I stay, I die.
+luna: That is not a choice.
+nox: Then we find a third path.
+luna: You say that as though paths appear because mice need them.
+nox: Sometimes they appear because mice are small enough to notice them.
+-> p097_promise_without_proof
+
+@scene p091_door_of_release
+system: The door marked with an open road leads to a prison chamber.
+system: Old chains hang from the walls.
+system: A central lever is bound by a rusted lock.
+system: Rizo sits behind a stone barrier.
+rizo: Nox.
+rizo: I knew you would choose freedom.
+nox: For myself.
+rizo: Freedom is never that selective.
+-> p091_reply
+
+@prompt p091_reply “I will”
+
+* “free the chained mechanism” => “I will free the chained mechanism.” -> p092_counterweight_chamber
+* “free Rizo” => “I will free Rizo.” -> p098_rizos_last_offer
+* “leave him imprisoned” => “I will leave you here.” -> p091_leave_rizo
+
+@scene p091_leave_rizo
+rizo: The priests will kill the girl.
+nox: You planned to sell her to them.
+rizo: I planned to survive.
+nox: So do we.
+system: Nox turns away.
+rizo: You still need the Rain Seal!
+system: Rizo raises the black-and-silver crescent from beneath his coat.
+-> p098_rizos_last_offer
+
+@scene p092_counterweight_chamber
+system: Two stone basins hang above a sealed water gate.
+system: One is empty.
+system: The other contains black sediment and old ceremonial objects.
+system: A narrow inscription crosses the balance beam.
+inscription: ABUNDANCE FLOWS ONLY WHEN THE BURDEN IS SHARED.
+-> p092_reply
+
+@prompt p092_reply “I will”
+
+* “balance the empty basin with stone” => “I will balance the empty basin with stone.” -> p099_temple_true_purpose
+* “place the Rain Seal in the empty basin” => “I will place the Rain Seal in the empty basin.” -> p093_flooded_shaft
+* “remove everything from the heavy basin” => “I will remove everything from the heavy basin.” -> p092_remove_all
+
+@scene p092_remove_all
+system: Nox removes the ceremonial objects one by one.
+system: The heavy basin rises.
+system: The empty basin falls too quickly.
+system: A gate opens beneath them.
+system: Water roars into the shaft.
+-> p093_flooded_shaft
+
+@scene p093_flooded_shaft
+system: Water surges through the chamber.
+system: The current pulls Nox toward a vertical shaft.
+luna: Give me your hand!
+-> p093_reply
+
+@prompt p093_reply “I will”
+
+* “take Luna’s hand” => “I will take Luna’s hand.” -> p093_rescue
+* “hold onto the Rain Seal” => “I will hold onto the Rain Seal.” -> ending_buried_abundance
+* “swim toward the lower gate” => “I will swim toward the lower gate.” -> ending_buried_abundance
+
+@scene p093_rescue
+system: Luna catches Nox’s wrist.
+system: Together they reach a maintenance ledge above the flood.
+nox: I thought cats disliked water.
+luna: I dislike drowning mice more.
+system: A narrow service tunnel leads toward the old control chamber.
+-> p099_temple_true_purpose
+
+@scene p094_first_crescent_jade
+system: Nox opens the oldest surviving record.
+system: The pages show a Felidian girl standing beside water gates.
+system: She carries tools, not ceremonial blades.
+inscription: THE CRESCENT JADE SHALL GIVE HER LIFE TO THE VALLEY.
+system: A second line survives beneath it.
+inscription: SHE SHALL KEEP THE WATERS UNTIL ANOTHER TAKES HER PLACE.
+nox: Give her life.
+nox: Not lose her life.
+luna: Dedicate it.
+nox: The first Crescent Jade was a keeper.
+-> p094_reply
+
+@prompt p094_reply “The sacrifice”
+
+* “was originally lifelong service” => “The sacrifice was originally lifelong service.” -> p099_temple_true_purpose
+* “must still require blood” => “The sacrifice must still require blood.” -> p096_lunas_choice
+* “was invented by later priests” => “The sacrifice was invented by later priests.” -> p094_later_records
+
+@scene p094_later_records
+system: Later records replace tools with bowls.
+system: Later still, the bowls become knives.
+system: Every generation copies the one before it.
+luna: No single priest invented this.
+nox: That makes it harder to stop.
+luna: And easier for each of them to claim innocence.
+-> p099_temple_true_purpose
+
+@scene p095_rizo_at_altar
+system: Guards drag Rizo into the ceremonial chamber.
+rizo: Nox.
+rizo: Tell them this is absurd.
+priest: One life for the valley.
+rizo: Then take someone who believes in it.
+nox: You were willing to give them Luna.
+rizo: That was business.
+-> p095_reply
+
+@prompt p095_reply “I will”
+
+* “let the priests seize Rizo” => “Take him.” -> p095_not_accepted
+* “help Rizo escape for information” => “I need what he knows.” -> p098_rizos_last_offer
+* “reject replacing one sacrifice with another” => “No one belongs on that altar.” -> p100_rain_seal_reclaimed
+
+@scene p095_not_accepted
+priest: The Crescent Jade is not merely a body.
+priest: She must bear the chosen mark.
+rizo: You see?
+rizo: Even their cruelty has rules.
+system: The priests push Rizo aside.
+-> p100_rain_seal_reclaimed
+
+@scene p096_lunas_choice
+system: Luna stands before the open altar.
+priest: The valley waits.
+luna: The valley has waited since before I was born.
+priest: Because you fled.
+luna: Because your temple stopped working.
+system: Luna looks at Nox.
+luna: Tell me the truth.
+luna: If there is no other way, should I do it?
+-> p096_reply
+
+@prompt p096_reply “I”
+
+* “will respect whatever you choose” => “I will respect whatever you choose.” -> p096_respect
+* “cannot allow you to die” => “I cannot allow you to die.” -> p097_promise_without_proof
+* “think one life may save thousands” => “I think one life may save thousands.” -> p101_sacrificial_procession
+
+@scene p096_respect
+luna: That is not an answer.
+nox: It is the only honest one I have.
+luna: Then help me find a better answer before I am forced to choose.
+-> p099_temple_true_purpose
+
+@scene p097_promise_without_proof
+nox: I will not let them kill you.
+luna: How?
+nox: I do not know yet.
+luna: Then that is not a promise.
+nox: It is a direction.
+system: Bells begin ringing throughout the temple.
+priest [distant]: Prepare the altar.
+-> p097_reply
+
+@prompt p097_reply “I will”
+
+* “investigate the reservoir system” => “I will investigate the reservoir system.” -> p099_temple_true_purpose
+* “attack the priests immediately” => “I will attack the priests immediately.” -> p101_sacrificial_procession
+* “search for Rizo and the Rain Seal” => “I will search for Rizo and the Rain Seal.” -> p098_rizos_last_offer
+
+@scene p098_rizos_last_offer
+system: Rizo stands beside the final control door.
+system: The Rain Seal is pressed against its lock.
+rizo: The priests think the girl brings rain.
+rizo: You think these old pipes do.
+rizo: I think desperate people will pay for either story.
+nox: Open the door.
+rizo: Partnership first.
+-> p098_reply
+
+@prompt p098_reply “I will”
+
+* “accept Rizo’s partnership” => “We work together.” -> ending_rizos_golden_bargain
+* “use him to reach the control chamber” => “Open the door, then we talk.” -> p100_rain_seal_reclaimed
+* “attack him for the seal” => “Give me the seal.” -> p098_fight
+
+@scene p098_fight
+system: Nox lunges for the Rain Seal.
+system: Rizo strikes him against the stone door.
+rizo: Still trying to fight above your weight.
+system: Luna drops from the upper ledge.
+luna: Then perhaps he needs someone heavier.
+system: Rizo turns too late.
+-> p100_rain_seal_reclaimed
+
+@scene p099_temple_true_purpose
+system: The final chamber contains no altar.
+system: It contains wheels, sluice controls, measuring rods, and maps of the valley.
+system: Ancient channels connect the limestone reservoir to every Felidian settlement.
+nox: This temple never created rain.
+luna: It stored water.
+nox: And released it during drought.
+system: A damaged control wheel rests beneath a crescent-shaped brace.
+luna: The Crescent Jade maintained the system.
+nox: The priests kept the title and forgot the work.
+-> p099_reply
+
+@prompt p099_reply “We should”
+
+* “open the ancient sluices” => “We should open the ancient sluices.” -> p102_buried_water
+* “show the truth to the priests first” => “We should show the priests first.” -> p103_priests_doubt
+* “escape with the knowledge” => “We should escape with the knowledge.” -> p099_escape_knowledge
+
+@scene p099_escape_knowledge
+luna: And leave them with an empty reservoir?
+nox: We could return with help.
+luna: The ceremony begins tonight.
+nox: Then we do not have time.
+-> p102_buried_water
+
+@scene p100_rain_seal_reclaimed
+system: Luna tears the Rain Seal from the control door.
+system: Rizo falls back against the wall.
+rizo: You still need me.
+luna: We needed the seal.
+nox: That was the mistake you made with everyone.
+rizo: Which mistake?
+nox: Thinking the tool was more important than the person using it.
+-> p100_reply
+
+@prompt p100_reply “I will”
+
+* “give the Rain Seal to Luna” => “The seal belongs with Luna.” -> p103_priests_doubt
+* “use the Rain Seal myself” => “I will use the seal.” -> ending_rizos_golden_bargain
+* “destroy the Rain Seal” => “No one should control this.” -> p100_destroy
+
+@scene p100_destroy
+system: Nox raises the seal over the stone floor.
+luna: Wait.
+nox: The priests used it to choose you.
+luna: The seal also controls the water gates.
+system: Nox lowers his hand.
+luna: A dangerous tool is still a tool.
+luna: We change who uses it.
+-> p103_priests_doubt
+
+@scene p101_sacrificial_procession
+system: Temple bells fill every corridor.
+system: Guards seize Luna and lead her toward the open-air altar.
+system: Villagers gather below the temple steps.
+system: Some pray.
+system: Some weep.
+system: Some stare at the empty sky.
+priest: When the moon reaches the center of the arch, the offering begins.
+nox [thought]: There is no time left.
+-> p101_reply
+
+@prompt p101_reply “I will”
+
+* “rescue Luna by force” => “I will rescue Luna by force.” -> p104_battle_beneath_crescent
+* “allow the ceremony to continue” => “I will allow the ceremony to continue.” -> p105_promised_rain
+* “interrupt the ceremony with the temple records” => “The ceremony is based on a false translation.” -> p103_priests_doubt
+
+@scene p102_buried_water
+system: PART V
+system: CRESCENT LUNA
+system: Nox and Luna stand before the final sluice controls.
+system: Pressure shakes the ancient pipes.
+system: Water waits behind stone gates sealed for generations.
+luna: If we open them too quickly, the lower valley floods.
+nox: If we open them too slowly, the ceremony continues.
+system: The control wheel has two settings.
+system: One releases the channels gradually.
+system: The other breaks every gate at once.
+-> p102_reply
+
+@prompt p102_reply “I will”
+
+* “release the reservoir slowly” => “I will release the reservoir slowly.” -> p106_valley_drinks
+* “break every gate at once” => “I will break every gate at once.” -> p107_great_flood
+* “wait for the priests’ permission” => “I will wait for the priests’ permission.” -> p103_priests_doubt
+
+@scene p103_priests_doubt
+system: PART V
+system: CRESCENT LUNA
+system: Nox and Luna enter the ceremonial chamber carrying the oldest temple records.
+system: The High Priest stands beside the altar.
+priest: The moon is nearly in place.
+nox: Your translation is wrong.
+system: Nox opens the record showing the first Crescent Jade beside the water controls.
+luna: She was a keeper.
+luna: Not a corpse.
+priest: Old symbols can be interpreted many ways.
+system: Deep below, water presses against the forgotten gates.
+-> p103_reply
+
+@prompt p103_reply “I will”
+
+* “demonstrate the ancient mechanism” => “Then watch the temple work.” -> p106_valley_drinks
+* “denounce the priests before the crowd” => “You turned service into sacrifice.” -> p108_faith_in_ruins
+* “ask the High Priest to choose” => “Will you test the water system or kill Luna?” -> p103_choice
+
+@scene p103_choice
+system: The High Priest looks from Luna to the dry valley.
+priest: If the mechanism fails, we lose the final hours before the ceremony.
+luna: If the ceremony fails, you lose me and keep the drought.
+nox: One choice can be reversed.
+nox: The other cannot.
+system: The High Priest lowers his ceremonial knife.
+-> p106_valley_drinks
+
+@scene p104_battle_beneath_crescent
+system: PART V
+system: CRESCENT LUNA
+system: Nox cuts through the altar rope.
+system: Guards rush toward him.
+system: Luna tears free before they reach the platform.
+luna: You chose the loud solution.
+nox: I was running out of quiet ones.
+system: Rizo appears at the temple gate with the Rain Seal.
+rizo: While everyone is distracted, I suggest we leave.
+-> p104_reply
+
+@prompt p104_reply “I will”
+
+* “protect Luna from the guards” => “I will protect Luna.” -> p109_crescent_luna
+* “pursue Rizo and the Rain Seal” => “I will pursue Rizo.” -> ending_rizos_golden_bargain
+* “escape with Luna through the aqueduct” => “We escape now.” -> ending_beyond_felidian
+
+@scene p105_promised_rain
+system: PART V
+system: CRESCENT LUNA
+system: The crescent moon reaches the center of the temple arch.
+system: Luna kneels before the altar.
+luna: Nox.
+nox: I am here.
+luna: Do not let them call this my choice.
+system: The ceremonial bell rings once.
+-> ending_promised_rain
+
+@ending ending_promised_rain “THE PROMISED RAIN”
+system: The ceremony ends before dawn.
+system: Luna does not leave the altar.
+system: Three days later, clouds gather above the Felidian valley.
+system: Rain falls across the fields.
+system: The priests call it a miracle.
+system: Nox never learns whether the rain was already coming.
+system: He only knows what it cost.
+
+@ending ending_false_treasure “THE FALSE TREASURE”
+system: Nox follows the image of a jewel deeper into the temple.
+system: Every shining crescent leads to another sealed chamber.
+system: The real Crescent Jade is taken to the altar while he searches.
+system: By the time Nox understands the word, the ceremony has begun.
+
+@ending ending_buried_abundance “BURIED BY ABUNDANCE”
+system: Nox refuses to release what he carries.
+system: Gold, water, and stone grow heavier around him.
+temple: ABUNDANCE WITHOUT RESTRAINT BECOMES BURDEN.
+system: The chamber closes beneath the weight of everything he would not surrender.
+
+@ending ending_rizos_golden_bargain “RIZO’S GOLDEN BARGAIN”
+system: Nox accepts Rizo’s partnership.
+system: Together they offer the Rain Seal, the temple records, and Luna’s location to the highest bidder.
+system: Priests, bandits, and frightened villagers fight for control of the temple.
+system: The final reservoir gate remains closed.
+system: Rizo dies surrounded by objects everyone considers valuable.
+system: Nox finally understands that a bargain can succeed and still destroy everyone involved.
