@@ -1039,3 +1039,619 @@ rizo: Once the girl appears, take her alive.
 bandit: And Nox?
 rizo: If he survived, he has already served his purpose.
 -> p051_camp_from_above
+
+@scene p050_rizo_welcome
+rizo: Welcome back, Nox.
+rizo: Tell us everything you found.
+system: Behind Rizo, a black-and-silver crescent hangs from his belt.
+nox [thought]: The Rain Seal.
+system: Two bandits close the path behind Nox.
+-> p050_reply
+
+@prompt p050_reply “I”
+
+* “found the route to the temple” => “I found the route to the temple.” -> p053_back_among_bandits
+* “found a Felidian girl” => “I found a Felidian girl.” -> p050_luna_question
+* “know you sent me there to die” => “I know you sent me there to die.” -> p054_one_mouse_against_rizo
+
+@scene p050_luna_question
+system: Rizo’s hand moves to the Rain Seal.
+rizo: A black cat girl?
+nox: You know her?
+rizo: I know what she is worth.
+nox [thought]: Not who she is.
+nox [thought]: What she is worth.
+-> p050_luna_reply
+
+@prompt p050_luna_reply “She”
+
+* “is not your treasure” => “She is not your treasure.” -> p054_one_mouse_against_rizo
+* “knows where the Crescent Jade is” => “She knows where the Crescent Jade is.” -> p053_back_among_bandits
+* “escaped deeper into the cave” => “She escaped deeper into the cave.” -> p050_lie
+
+@scene p050_lie
+rizo: Deeper?
+system: Rizo studies Nox’s face.
+rizo: Then you will lead us to her.
+nox: I do not know the route.
+rizo: You found your way out.
+rizo: You will find your way back.
+-> p053_back_among_bandits
+
+@scene p051_camp_from_above
+system: Nox watches from the limestone ridge.
+system: Rizo stands beside an iron cage.
+system: The Rain Seal hangs from his belt.
+rizo: Once the girl appears, take her alive.
+bandit: And Nox?
+rizo: If he survived, he has already served his purpose.
+system: Another bandit unfolds a copy of Nox’s map.
+-> p051_reply
+
+@prompt p051_reply “I should”
+
+* “keep listening” => “I should keep listening.” -> p055_price_of_girl
+* “steal the Rain Seal now” => “I should steal the Rain Seal now.” -> p060_knife_behind_smile
+* “leave before they find me” => “I should leave before they find me.” -> p056_escape_without_luna
+
+@scene p052_enemy_of_enemy
+system: Nox leads Luna through a narrow crack above the camp.
+system: Nine Murid bandits wait below.
+system: Rizo stands beside an iron cage.
+system: The Rain Seal hangs from his belt.
+luna: There.
+nox: I see it.
+luna: No.
+luna: You see the seal.
+luna: I see what he intends to do with it.
+-> p052_reply
+
+@prompt p052_reply “We should”
+
+* “attack before they move” => “We should attack before they move.” -> p057_lunas_assault
+* “listen to Rizo first” => “We should listen to Rizo first.” -> p055_price_of_girl
+* “steal the seal without fighting” => “We should steal the seal without fighting.” -> p052_stealth
+
+@scene p052_stealth
+nox: I can reach his tent from the rear.
+luna: Alone?
+nox: I am small enough.
+luna: That was Rizo’s argument too.
+nox: This time I chose it.
+system: Luna watches him for a long moment.
+luna: Then I will make sure he is looking elsewhere.
+-> p060_knife_behind_smile
+
+@scene p053_back_among_bandits
+system: Rizo places one arm around Nox’s shoulders.
+rizo: You see?
+rizo: I told them you would return.
+system: None of the bandits meet Nox’s eyes.
+rizo: Now show us the entrance.
+nox [thought]: They brought ropes.
+nox [thought]: Weapons.
+nox [thought]: And a cage.
+-> p053_reply
+
+@prompt p053_reply “I will”
+
+* “guide them toward the sacred gate” => “I will guide them toward the sacred gate.” -> p058_open_sacred_gate
+* “lead them toward the Felidian guards” => “I will lead them toward the Felidian guards.” -> p059_guard_line
+* “pretend to cooperate until I can act” => “I will pretend to cooperate until I can act.” -> p060_knife_behind_smile
+
+@scene p054_one_mouse_against_rizo
+nox: You changed the map.
+nox: You sealed the entrance behind me.
+rizo: And still you returned.
+nox: You expected me to die.
+rizo: I expected you to be useful.
+system: The bandits form a circle around Nox.
+rizo: Do not confuse survival with importance.
+-> p054_reply
+
+@prompt p054_reply “I will”
+
+* “draw my knife” => “I will draw my knife.” -> ending_one_mouse_caravan
+* “pretend to surrender” => “I will pretend to surrender.” -> p060_knife_behind_smile
+* “call for Luna” => “I will call for Luna.” -> p054_call_luna
+
+@scene p054_call_luna
+nox: Luna!
+system: Silence answers him.
+rizo: The Felidian girl?
+rizo: You escaped from her and still expect her to save you?
+system: Rizo draws his blade.
+-> ending_one_mouse_caravan
+
+@ending ending_one_mouse_caravan “ONE MOUSE AGAINST THE CARAVAN”
+system: Nox raises his knife.
+system: Rizo does not move first.
+system: He does not need to.
+system: Eight bandits close around Nox.
+rizo: Courage is useful.
+rizo: But only when someone powerful can afford it.
+system: Nox learns too late that bravery is not the same as strength.
+
+@scene p055_price_of_girl
+system: Rizo speaks beside the iron cage.
+rizo: The priests lost their sacrifice.
+bandit: You mean the girl?
+rizo: I mean the Crescent Jade.
+bandit: I thought it was a jewel.
+rizo: So did every fool who died searching for it.
+system: Luna’s claws press into the limestone.
+luna: He knows.
+nox: Not everything.
+rizo: With the girl and the Rain Seal, the priests will pay us enough to buy a city.
+-> p055_reply
+
+@prompt p055_reply “I should”
+
+* “return to Luna with the truth” => “I should return to Luna with the truth.” -> p057_lunas_assault
+* “bargain with Rizo” => “I should bargain with Rizo.” -> p061_rizos_bargain
+* “wait until he reveals the temple route” => “I should wait until he reveals the temple route.” -> p055_route
+
+@scene p055_route
+rizo: The Moon Gate lies beneath the eastern ridge.
+rizo: The seal opens it.
+bandit: And if the priests refuse to pay?
+rizo: Then we sell the girl elsewhere.
+system: Luna’s breathing becomes quieter.
+nox [thought]: That is worse than anger.
+-> p057_lunas_assault
+
+@scene p056_escape_without_luna
+system: Nox slips away from the camp.
+system: Open land stretches beyond the limestone ridge.
+system: The road back toward Murid territory is unguarded.
+nox [thought]: I could leave.
+nox [thought]: Rizo would have the girl.
+nox [thought]: The priests would have their sacrifice.
+nox [thought]: But I would live.
+-> p056_reply
+
+@prompt p056_reply “I will”
+
+* “leave Felidian territory” => “I will leave Felidian territory.” -> ending_mouse_escaped_alone
+* “return for the Rain Seal” => “I will return for the Rain Seal.” -> p060_knife_behind_smile
+* “search for Luna first” => “I will search for Luna first.” -> p057_lunas_assault
+
+@ending ending_mouse_escaped_alone “THE MOUSE WHO ESCAPED ALONE”
+system: Nox walks until the limestone hills disappear behind him.
+system: No one follows.
+system: No claws reach for him.
+system: No bandit calls his name.
+system: Months later, he hears that the Felidian priests completed their ceremony.
+system: He never asks what became of Luna.
+
+@scene p057_lunas_assault
+system: Luna drops from the ridge into the center of the camp.
+bandit: Felidian!
+rizo: Take her alive!
+system: Luna cuts the nearest lantern rope.
+system: Darkness falls across the camp.
+luna: Nox.
+luna: Now.
+-> p057_reply
+
+@prompt p057_reply “I will”
+
+* “cut the bandits’ escape ropes” => “I will cut the bandits’ escape ropes.” -> p062_bandits_in_darkness
+* “pursue Rizo directly” => “I will pursue Rizo directly.” -> p063_moon_gate_opens
+* “free the frightened pack animals” => “I will free the frightened pack animals.” -> p057_animals
+
+@scene p057_animals
+system: Nox cuts the caravan animals loose.
+system: Frightened beasts scatter through the camp.
+system: Tents collapse.
+system: Supplies roll down the ridge.
+bandit: Stop them!
+system: Half the bandits abandon the fight.
+luna: Effective.
+nox: You sound surprised.
+luna: I am adjusting my expectations.
+-> p062_bandits_in_darkness
+
+@scene p058_open_sacred_gate
+system: Nox leads the bandits along the ridge.
+system: A stone gate stands between two carved Felidian pillars.
+system: Three guards wait before it.
+guard: Stop there.
+guard: Return the Rain Seal.
+rizo: Nox.
+rizo: Show them how useful you can be.
+-> p058_reply
+
+@prompt p058_reply “I will”
+
+* “attack the Felidian guards” => “I will attack the Felidian guards.” -> ending_price_of_rain
+* “turn against Rizo” => “I will turn against Rizo.” -> p059_guard_line
+* “warn the guards about Luna” => “I will warn the guards about Luna.” -> p059_guard_line
+
+@scene p059_guard_line
+nox: Rizo stole the Rain Seal.
+nox: He plans to capture the Crescent Jade.
+system: The guards raise their spears.
+guard: And you traveled with him.
+nox: Yes.
+guard: Then surrender.
+system: Rizo’s bandits close from behind.
+-> p059_reply
+
+@prompt p059_reply “I will”
+
+* “surrender and explain everything” => “I will surrender and explain everything.” -> p064_prisoner_of_priests
+* “run back to Rizo” => “I will run back to Rizo.” -> ending_price_of_rain
+* “create a distraction and escape” => “I will create a distraction and escape.” -> p059_escape
+
+@scene p059_escape
+system: Nox kicks loose stones down the ridge.
+system: Guards and bandits turn toward the noise.
+system: Nox slips beneath the gate’s side wall.
+system: A narrow aqueduct leads into darkness.
+-> p075_forgotten_aqueduct
+
+@scene p060_knife_behind_smile
+system: Nox returns to Rizo’s side.
+rizo: Changed your mind?
+nox: I understand my place now.
+rizo: Good.
+system: Rizo turns toward the map.
+system: The Rain Seal hangs within Nox’s reach.
+-> p060_reply
+
+@prompt p060_reply “I will”
+
+* “steal the Rain Seal” => “I will steal the Rain Seal.” -> p065_stolen_rain_seal
+* “wait for a safer opportunity” => “I will wait for a safer opportunity.” -> p061_rizos_bargain
+* “attack Rizo from behind” => “I will attack Rizo from behind.” -> p060_attack
+
+@scene p060_attack
+system: Nox draws his knife.
+system: Rizo catches his wrist without turning.
+rizo: Better.
+rizo: At least now you are trying to be dangerous.
+system: Rizo throws Nox to the ground.
+-> ending_one_mouse_caravan
+
+@scene p061_rizos_bargain
+rizo: You are angry.
+nox: You sent me to die.
+rizo: I sent you to become valuable.
+rizo: And now you are.
+system: Rizo places a small pouch of coins before Nox.
+rizo: Help me deliver the girl to the priests.
+rizo: You will receive a full share.
+-> p061_reply
+
+@prompt p061_reply “I will”
+
+* “accept my share” => “I will accept my share.” -> ending_price_of_rain
+* “free Luna secretly” => “I will free Luna secretly.” -> p066_mouse_cuts_cage
+* “ask what the priests intend to do” => “I will ask what the priests intend to do.” -> p061_ceremony
+
+@scene p061_ceremony
+rizo: They will pray for rain.
+nox: With a girl tied to an altar?
+rizo: Priests always make simple things theatrical.
+nox: She will die.
+rizo: One girl.
+rizo: One valley.
+rizo: And enough gold to keep our caravan alive for years.
+-> p061_final_reply
+
+@prompt p061_final_reply “That”
+
+* “is murder” => “That is murder.” -> p066_mouse_cuts_cage
+* “is a fair price” => “That is a fair price.” -> ending_price_of_rain
+* “sounds like the priests’ problem” => “That sounds like the priests’ problem.” -> ending_price_of_rain
+
+@ending ending_price_of_rain “THE PRICE OF RAIN”
+system: Rizo delivers Luna and the Rain Seal to the Felidian priests.
+system: The priests pay in gold, water, and safe passage.
+system: Rizo gives Nox the full share he promised.
+rizo: You wanted treasure.
+rizo: Now you have it.
+system: As the caravan leaves, a ceremonial bell rings behind them.
+nox [thought]: The bag is heavier than I expected.
+system: No one looks back.
+
+@scene p062_bandits_in_darkness
+system: The camp dissolves into confusion.
+system: Several bandits run toward the ridge.
+system: Two fall when their escape rope snaps.
+bandit: Help us!
+system: Rizo runs toward the Moon Gate with the Rain Seal.
+luna: He is getting away.
+-> p062_reply
+
+@prompt p062_reply “I will”
+
+* “rescue the trapped bandits” => “I will rescue the trapped bandits.” -> p067_better_leader
+* “leave them and chase Rizo” => “I will leave them and chase Rizo.” -> p063_moon_gate_opens
+* “order them to stop fighting” => “I will order them to stop fighting.” -> p067_better_leader
+
+@scene p063_moon_gate_opens
+system: Rizo reaches a black stone gate.
+system: He presses the Rain Seal into a crescent-shaped hollow.
+temple: THUM.
+system: The gate opens inward.
+rizo: Too slow, Nox.
+system: Rizo disappears into the darkness beyond it.
+system: The stone gate begins closing.
+-> p063_reply
+
+@prompt p063_reply “I will”
+
+* “follow Rizo immediately” => “I will follow Rizo immediately.” -> p069_rizos_trail
+* “wait for Luna” => “I will wait for Luna.” -> p068_into_temple_together
+* “try to remove the Rain Seal first” => “I will try to remove the Rain Seal first.” -> p063_seal_rejects
+
+@scene p063_seal_rejects
+system: Nox reaches for the seal.
+system: The crescent hollow closes around his hand.
+temple: TING.
+nox: Not that bell again.
+system: Luna pulls him backward before a stone blade falls.
+luna: You are very committed to repeating mistakes.
+-> p068_into_temple_together
+
+@scene p064_prisoner_of_priests
+system: The Felidian guards bind Nox’s hands.
+guard: The high priest will decide whether you are a thief or a witness.
+nox: Rizo has the Rain Seal.
+guard: We know.
+nox: Then why are you still guarding this gate?
+guard: Because he does not have the Crescent Jade.
+system: The guard looks toward the cave behind Nox.
+-> p064_reply
+
+@prompt p064_reply “I will”
+
+* “reveal that Luna is nearby” => “Luna is nearby.” -> p070_priests_escort
+* “conceal Luna’s location” => “I do not know where Luna is.” -> p064_conceal
+* “say Rizo plans to sell her” => “Rizo plans to sell her.” -> p070_priests_escort
+
+@scene p064_conceal
+guard: You are lying.
+nox: I learned from Rizo.
+guard: Then perhaps you learned why lies fail before priests.
+system: The guards lead Nox toward an older aqueduct entrance.
+-> p075_forgotten_aqueduct
+
+@scene p065_stolen_rain_seal
+system: Nox cuts the cord from Rizo’s belt.
+system: The Rain Seal drops into his hand.
+rizo: Nox.
+system: Every bandit turns toward him.
+system: Luna appears on the ridge above.
+-> p065_reply
+
+@prompt p065_reply “I will”
+
+* “throw the seal to Luna” => “I will throw the seal to Luna.” -> p068_into_temple_together
+* “keep it for myself” => “I will keep it for myself.” -> p071_seals_false_promise
+* “use it to bargain with Rizo” => “I will use it to bargain with Rizo.” -> p065_bargain
+
+@scene p065_bargain
+nox: Let me leave.
+nox: Or the seal goes over the cliff.
+rizo: You would not destroy the only thing worth more than your life.
+nox: You keep making that comparison.
+system: Rizo steps closer.
+-> p065_bargain_reply
+
+@prompt p065_bargain_reply “I will”
+
+* “throw it to Luna” => “I will throw it to Luna.” -> p068_into_temple_together
+* “give it back to Rizo” => “I will give it back to Rizo.” -> p061_rizos_bargain
+* “run for the gate with it” => “I will run for the gate with it.” -> p071_seals_false_promise
+
+@scene p066_mouse_cuts_cage
+system: Nox waits until Rizo turns away.
+system: He slips behind the iron cage.
+system: Luna sits inside with her wrists bound.
+luna: You came back.
+nox: Quiet.
+luna: That is what you said before dropping the knife.
+nox: I am trying to rescue you.
+luna: Then try more quickly.
+-> p066_reply
+
+@prompt p066_reply “I will”
+
+* “open the cage and escape with her” => “I will open the cage and escape with her.” -> p068_into_temple_together
+* “demand a reward first” => “I will demand a reward first.” -> p071_seals_false_promise
+* “ask her to attack Rizo immediately” => “I will ask her to attack Rizo immediately.” -> p057_lunas_assault
+
+@scene p067_better_leader
+system: Nox cuts the trapped bandits free.
+bandit: Why help us?
+nox: Because Rizo would not.
+system: The remaining bandits hesitate.
+bandit: He sent you first.
+bandit: Then he left us behind too.
+system: Rizo reaches the Moon Gate alone.
+-> p067_reply
+
+@prompt p067_reply “I will tell them to”
+
+* “stand down and leave Felidian territory” => “Stand down and leave Felidian territory.” -> p072_caravan_divides
+* “follow me against Rizo” => “Follow me against Rizo.” -> p072_caravan_divides
+* “chase Rizo without me” => “Chase Rizo without me.” -> p073_expendable_again
+
+@scene p068_into_temple_together
+system: Nox and Luna stand before the Moon Gate.
+system: Ancient Felidian writing circles the crescent-shaped lock.
+luna: Rizo has gone inside.
+nox: Then we follow him.
+luna: The main gate is meant for priests.
+nox: Is there another entrance?
+luna: There was once an aqueduct.
+-> p068_reply
+
+@prompt p068_reply “We should”
+
+* “enter through the Moon Gate” => “We should enter through the Moon Gate.” -> p074_temple_of_abundance
+* “search for the old aqueduct” => “We should search for the old aqueduct.” -> p075_forgotten_aqueduct
+* “wait for the guards” => “We should wait for the guards.” -> p070_priests_escort
+
+@scene p069_rizos_trail
+system: Nox slips through the gate before it closes.
+system: The corridor beyond is lined with black floor tiles.
+system: Rizo’s footprints cross them in an uneven pattern.
+system: Several untouched tiles bear shallow crescent marks.
+nox [thought]: He stepped on some tiles and avoided others.
+nox [thought]: That does not mean he knew which were safe.
+-> p069_reply
+
+@prompt p069_reply “I will”
+
+* “step exactly where Rizo stepped” => “I will step exactly where Rizo stepped.” -> p076_first_offering_hall
+* “inspect the threshold first” => “I will inspect the threshold first.” -> p075_forgotten_aqueduct
+* “take the untouched crescent tiles” => “I will take the untouched crescent tiles.” -> p069_trap
+
+@scene p069_trap
+system: Nox steps on an untouched crescent tile.
+temple: TING.
+system: Stone shutters fall behind him.
+system: Water begins pouring into the corridor.
+-> p093_flooded_shaft
+
+@scene p070_priests_escort
+system: Felidian guards surround Nox and Luna.
+guard: The Crescent Jade has returned.
+luna: I returned for the Rain Seal.
+guard: The high priest will hear you.
+luna: He heard me before I ran.
+system: The guards open a ceremonial path toward the temple.
+-> p070_reply
+
+@prompt p070_reply “I will”
+
+* “cooperate for now” => “I will cooperate for now.” -> p077_procession_white_robes
+* “help Luna escape into the side passages” => “I will help Luna escape into the side passages.” -> p075_forgotten_aqueduct
+* “ask whether the sacrifice is voluntary” => “Is the sacrifice voluntary?” -> p070_answer
+
+@scene p070_answer
+guard: The Crescent Jade was chosen.
+nox: That was not my question.
+guard: One life protects the valley.
+luna: That was not his question.
+system: The guards tighten their formation.
+-> p077_procession_white_robes
+
+@scene p071_seals_false_promise
+system: Nox holds the Rain Seal.
+system: The black stone is warm in his hands.
+nox [thought]: With this, I can open the temple myself.
+system: A narrow sealed door stands beneath the ridge.
+system: Its hollow matches the crescent shape.
+-> p071_reply
+
+@prompt p071_reply “I will”
+
+* “use the seal on the first door” => “I will use the seal on the first door.” -> ending_false_treasure
+* “return it to Luna” => “I will return it to Luna.” -> p068_into_temple_together
+* “hide it and enter through the aqueduct” => “I will hide it and enter through the aqueduct.” -> p075_forgotten_aqueduct
+
+@ending ending_false_treasure “THE FALSE TREASURE”
+system: Nox presses the Rain Seal into the door.
+system: The crescent lock accepts it.
+system: The floor opens beneath him.
+nox [thought]: It opened.
+system: The seal was never a key to every door.
+system: Only a mark of authority.
+system: The temple does not recognize Nox as its bearer.
+
+@scene p072_caravan_divides
+system: The Murid bandits lower their weapons.
+system: Some flee toward the caravan road.
+system: Others remain beside Nox.
+bandit: Rizo has the seal.
+bandit: And he knows the Moon Gate.
+nox: Then we reach the temple another way.
+system: Luna points toward a dry channel cut into the ridge.
+luna: The old aqueduct.
+-> p072_reply
+
+@prompt p072_reply “We will”
+
+* “enter through the aqueduct” => “We will enter through the aqueduct.” -> p075_forgotten_aqueduct
+* “pursue Rizo through the main gate” => “We will pursue Rizo through the main gate.” -> p076_first_offering_hall
+* “send the bandits home and continue alone” => “Go home. Luna and I will continue.” -> p075_forgotten_aqueduct
+
+@scene p073_expendable_again
+system: The bandits rush after Rizo.
+system: Nox remains behind.
+system: A moment later, bells ring inside the Moon Gate.
+temple: TING.
+temple: TING.
+temple: TING.
+system: Screams echo through the stone.
+nox [thought]: He sent them first.
+nox [thought]: Just as he sent me.
+-> ending_one_mouse_caravan
+
+@scene p074_temple_of_abundance
+system: PART IV
+system: SECRET OF THE TEMPLE OF ABUNDANCE
+system: The Moon Gate closes behind Nox and Luna.
+system: The air smells of dust, incense, and distant water.
+system: Rain carvings cover the walls.
+system: Rizo’s footprints lead toward a golden corridor.
+system: Older water channels descend in the opposite direction.
+luna: The priests will already know the gate opened.
+nox: Then we should move.
+-> p074_reply
+
+@prompt p074_reply “We should follow”
+
+* “the ancient rain carvings” => “We should follow the ancient rain carvings.” -> p078_door_without_shadow
+* “Rizo’s footprints” => “We should follow Rizo’s footprints.” -> p079_rizos_triggered_trap
+* “the sound of water below” => “We should follow the sound of water below.” -> p075_forgotten_aqueduct
+
+@scene p075_forgotten_aqueduct
+system: PART IV
+system: SECRET OF THE TEMPLE OF ABUNDANCE
+system: Nox and Luna enter a dry stone channel beneath the temple.
+system: Mineral stains show that water once flowed here.
+system: A faint trickle sounds somewhere below.
+system: Chanting echoes from an opening above.
+luna: This passage predates the current priesthood.
+nox: How do you know?
+luna: The old builders expected water to enter.
+luna: The priests expect blood.
+-> p075_reply
+
+@prompt p075_reply “We should follow”
+
+* “the sound of water” => “We should follow the sound of water.” -> p080_dry_reservoir
+* “the chanting above” => “We should follow the chanting above.” -> p081_high_priest
+* “Rizo’s scratches on the wall” => “We should follow Rizo’s scratches on the wall.” -> p076_first_offering_hall
+
+@scene p076_first_offering_hall
+system: PART IV
+system: SECRET OF THE TEMPLE OF ABUNDANCE
+system: Nox enters a chamber filled with ceremonial gifts.
+system: Golden bowls line the walls.
+system: Rizo’s footprints cross the dust.
+system: One bowl has already been removed.
+nox [thought]: He took the first treasure he saw.
+system: A low stone door waits beyond the offerings.
+-> p076_reply
+
+@prompt p076_reply “I will”
+
+* “leave the gold untouched” => “I will leave the gold untouched.” -> p078_door_without_shadow
+* “take one golden bowl” => “I will take one golden bowl.” -> p082_weight_of_gold
+* “study the marks beneath the bowls” => “I will study the marks beneath the bowls.” -> p076_marks
+
+@scene p076_marks
+system: Beneath every bowl is a carved image.
+system: Grain beneath one.
+system: Water beneath another.
+system: A kneeling girl beneath the empty place.
+nox [thought]: The gifts are not all objects.
+nox [thought]: They are things the valley gives up.
+-> p078_door_without_shadow
