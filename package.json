@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run story:build && tsc -b && vite build",
-    "story:build": "node scripts/compile-story.mjs story/sample.story src/generated/story.json",
-    "story:check": "node scripts/compile-story.mjs --check story/sample.story",
+    "story:build": "node scripts/compile-story.mjs story/Crescent-Luna-en.story src/generated/story-en.json && node scripts/compile-story.mjs story/Crescent-Luna-ja.story src/generated/story-ja.json",
+    "story:check": "node scripts/compile-story.mjs --check story/Crescent-Luna-en.story && node scripts/compile-story.mjs --check story/Crescent-Luna-ja.story",
     "lint": "eslint .",
     "preview": "vite preview"
   },
