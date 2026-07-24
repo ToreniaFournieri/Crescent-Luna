@@ -31,9 +31,10 @@ Start with a small, project-specific text format rather than exposing the
 runtime TypeScript structure to writers. Markdown-like blocks make dialogue
 read naturally in diffs, while explicit directives keep parsing predictable.
 
-The complete current conversation is available as a human-authored example in
-[`story/sample.story`](story/sample.story). A shortened source file looks like
-this:
+The complete current conversation is available in English and Japanese as
+[`story/Crescent-Luna-en.story`](story/Crescent-Luna-en.story) and
+[`story/Crescent-Luna-ja.story`](story/Crescent-Luna-ja.story). A shortened
+source file looks like this:
 
 ```text
 @scene opening
