@@ -5,6 +5,7 @@ import { Composer } from './components/Composer'
 import { MessageBubble } from './components/MessageBubble'
 import { SuggestionBar } from './components/SuggestionBar'
 import { choose, restart, send } from './runtime/engine'
+import { loadStoryState, saveStoryState } from './runtime/persistence'
 import type { CompiledStory, RuntimeChoice } from './types/story'
 
 type Language = 'en' | 'ja'
@@ -29,13 +30,14 @@ export default function App() {
   const [language, setLanguage] = useState<Language>(initialLanguage)
   const story = stories[language]
   const labels = copy[language]
-  const [state, setState] = useState(() => restart(story))
+  const [state, setState] = useState(() => loadStoryState(story, language) ?? restart(story))
   const [locked, setLocked] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
   const bottomRef = useRef<HTMLDivElement>(null)
   const node = story.nodes[state.nodeId]
   const prompt = node?.kind === 'prompt' ? node : null
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [state])
+  useEffect(() => { saveStoryState(story, language, state) }, [language, state, story])
   const onChoose = (choice: RuntimeChoice) => { if (locked) return; setLocked(true); setSelected(choice.id); window.setTimeout(() => { setState((old) => choose(old, choice)); setSelected(null); setLocked(false) }, 160) }
   const onUndo = () => { if (locked) return; setState((old) => ({ ...old, completed: null })) }
   const onSend = () => { if (!state.completed || locked) return; setLocked(true); window.setTimeout(() => { setState((old) => send(story, old)); setLocked(false) }, 500) }
@@ -45,7 +47,7 @@ export default function App() {
     if (nextLanguage === language) return
     window.localStorage.setItem('crescent-luna-language', nextLanguage)
     setLanguage(nextLanguage)
-    setState(restart(stories[nextLanguage]))
+    setState(loadStoryState(stories[nextLanguage], nextLanguage) ?? restart(stories[nextLanguage]))
     setLocked(false)
     setSelected(null)
   }
