@@ -1,0 +1,1968 @@
+{
+  "formatVersion": 1,
+  "storyId": "crescent-luna",
+  "revision": "b077ac5678c0",
+  "entry": "part1_dungeon",
+  "nodes": {
+    "part1_dungeon": {
+      "kind": "scene",
+      "id": "part1_dungeon",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "PART I"
+        },
+        {
+          "speaker": "system",
+          "text": "DUNGEON"
+        },
+        {
+          "speaker": "system",
+          "text": "Murid Caravan — Before sunrise"
+        },
+        {
+          "speaker": "system",
+          "text": "Rain clouds hang far beyond the Felidian border."
+        }
+      ],
+      "next": "p001_rizos_assignment"
+    },
+    "p001_rizos_assignment": {
+      "kind": "scene",
+      "id": "p001_rizos_assignment",
+      "messages": [
+        {
+          "speaker": "rizo",
+          "text": "Nox."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Come here."
+        },
+        {
+          "speaker": "system",
+          "text": "Rizo spreads an old map across a wooden crate."
+        },
+        {
+          "speaker": "rizo",
+          "text": "I found the entrance."
+        },
+        {
+          "speaker": "rizo",
+          "text": "The Crescent Jade is somewhere beneath these ruins."
+        },
+        {
+          "speaker": "nox",
+          "text": "The treasure every caravan has been searching for.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "rizo",
+          "text": "You are the only one small enough to enter without disturbing the old passages."
+        }
+      ],
+      "next": "p001_reply"
+    },
+    "p001_reply": {
+      "kind": "prompt",
+      "id": "p001_reply",
+      "draft": "You",
+      "choices": [
+        {
+          "id": "p001_reply_1",
+          "label": "want me to go first",
+          "text": "You want me to go first.",
+          "next": "p003_rizos_smile"
+        },
+        {
+          "id": "p001_reply_2",
+          "label": "found the Crescent Jade",
+          "text": "You found the Crescent Jade?",
+          "next": "p002_false_map"
+        },
+        {
+          "id": "p001_reply_3",
+          "label": "expect me to enter alone",
+          "text": "You expect me to enter alone?",
+          "next": "p003_rizos_smile"
+        }
+      ]
+    },
+    "p002_false_map": {
+      "kind": "scene",
+      "id": "p002_false_map",
+      "messages": [
+        {
+          "speaker": "rizo",
+          "text": "I found the route."
+        },
+        {
+          "speaker": "rizo",
+          "text": "The treasure itself is still waiting for us."
+        },
+        {
+          "speaker": "system",
+          "text": "Rizo taps three circles drawn beside a corridor."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Three circles mean safe."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Follow the marks, find the Jade, then come back."
+        },
+        {
+          "speaker": "nox",
+          "text": "If I bring it back, no one will call me useless again.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p002_reply"
+    },
+    "p002_reply": {
+      "kind": "prompt",
+      "id": "p002_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p002_reply_1",
+          "label": "follow the map",
+          "text": "I will follow the map.",
+          "next": "p004_split_stair"
+        },
+        {
+          "id": "p002_reply_2",
+          "label": "inspect the map first",
+          "text": "I will inspect the map first.",
+          "next": "p005_ink_over_scratches"
+        },
+        {
+          "id": "p002_reply_3",
+          "label": "ask why no one else is coming",
+          "text": "I will ask why no one else is coming.",
+          "next": "p003_rizos_smile"
+        }
+      ]
+    },
+    "p003_rizos_smile": {
+      "kind": "scene",
+      "id": "p003_rizos_smile",
+      "messages": [
+        {
+          "speaker": "rizo",
+          "text": "Alone?"
+        },
+        {
+          "speaker": "rizo",
+          "text": "You make it sound as though I am abandoning you."
+        },
+        {
+          "speaker": "rizo",
+          "text": "We will be waiting outside."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Once you confirm the path, we all go in together."
+        },
+        {
+          "speaker": "system",
+          "text": "The other bandits avoid looking at Nox."
+        },
+        {
+          "speaker": "nox",
+          "text": "No one has prepared a torch.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "No one has packed climbing rope.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p003_reply"
+    },
+    "p003_reply": {
+      "kind": "prompt",
+      "id": "p003_reply",
+      "draft": "Then",
+      "choices": [
+        {
+          "id": "p003_reply_1",
+          "label": "give me the map",
+          "text": "Then give me the map.",
+          "next": "p002_false_map"
+        },
+        {
+          "id": "p003_reply_2",
+          "label": "send someone with me",
+          "text": "Then send someone with me.",
+          "next": "p006_no_place"
+        },
+        {
+          "id": "p003_reply_3",
+          "label": "tell me what happened to the last scout",
+          "text": "Tell me what happened to the last scout.",
+          "next": "p003_last_scout"
+        }
+      ]
+    },
+    "p003_last_scout": {
+      "kind": "scene",
+      "id": "p003_last_scout",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Rizo’s smile disappears for only a moment."
+        },
+        {
+          "speaker": "rizo",
+          "text": "There was no last scout."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Do not invent reasons to be afraid."
+        },
+        {
+          "speaker": "nox",
+          "text": "I did not say I was afraid.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p003_last_reply"
+    },
+    "p003_last_reply": {
+      "kind": "prompt",
+      "id": "p003_last_reply",
+      "draft": "I",
+      "choices": [
+        {
+          "id": "p003_last_reply_1",
+          "label": "understand",
+          "text": "I understand.",
+          "next": "p002_false_map"
+        },
+        {
+          "id": "p003_last_reply_2",
+          "label": "do not believe you",
+          "text": "I do not believe you.",
+          "next": "p006_no_place"
+        },
+        {
+          "id": "p003_last_reply_3",
+          "label": "will return with the treasure",
+          "text": "I will return with the treasure.",
+          "next": "p002_false_map"
+        }
+      ]
+    },
+    "p005_ink_over_scratches": {
+      "kind": "scene",
+      "id": "p005_ink_over_scratches",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox turns the map toward the morning light."
+        },
+        {
+          "speaker": "system",
+          "text": "Several arrows have been drawn with fresh black ink."
+        },
+        {
+          "speaker": "system",
+          "text": "Older markings remain underneath."
+        },
+        {
+          "speaker": "nox",
+          "text": "Rizo covered something.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Beneath one arrow is a broken crescent symbol."
+        },
+        {
+          "speaker": "system",
+          "text": "Another corridor has been scratched out completely."
+        }
+      ],
+      "next": "p005_reply"
+    },
+    "p005_reply": {
+      "kind": "prompt",
+      "id": "p005_reply",
+      "draft": "The old markings",
+      "choices": [
+        {
+          "id": "p005_reply_1",
+          "label": "may show the safer route",
+          "text": "The old markings may show the safer route.",
+          "next": "p009_broken_crescent"
+        },
+        {
+          "id": "p005_reply_2",
+          "label": "are probably outdated",
+          "text": "The old markings are probably outdated.",
+          "next": "p004_split_stair"
+        },
+        {
+          "id": "p005_reply_3",
+          "label": "prove Rizo has been inside before",
+          "text": "The old markings prove Rizo has been inside before.",
+          "next": "p003_rizos_smile"
+        }
+      ]
+    },
+    "p006_no_place": {
+      "kind": "scene",
+      "id": "p006_no_place",
+      "messages": [
+        {
+          "speaker": "rizo",
+          "text": "You want another bandit to risk his life for you?"
+        },
+        {
+          "speaker": "rizo",
+          "text": "Perhaps you are not ready to earn a full share."
+        },
+        {
+          "speaker": "bandit",
+          "text": "Let the little mouse stay with the wagons."
+        },
+        {
+          "speaker": "bandit",
+          "text": "We can find someone braver."
+        },
+        {
+          "speaker": "nox",
+          "text": "If I refuse, I will never hear the end of it.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p006_reply"
+    },
+    "p006_reply": {
+      "kind": "prompt",
+      "id": "p006_reply",
+      "draft": "I",
+      "choices": [
+        {
+          "id": "p006_reply_1",
+          "label": "will enter the dungeon",
+          "text": "I will enter the dungeon.",
+          "next": "p002_false_map"
+        },
+        {
+          "id": "p006_reply_2",
+          "label": "am leaving the caravan",
+          "text": "I am leaving the caravan.",
+          "next": "ending_no_adventure"
+        },
+        {
+          "id": "p006_reply_3",
+          "label": "only asked a question",
+          "text": "I only asked a question.",
+          "next": "p002_false_map"
+        }
+      ]
+    },
+    "ending_no_adventure": {
+      "kind": "ending",
+      "id": "ending_no_adventure",
+      "title": "NO ADVENTURE BEGUN",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox leaves before sunrise."
+        },
+        {
+          "speaker": "system",
+          "text": "He never enters the Felidian ruins."
+        },
+        {
+          "speaker": "system",
+          "text": "He never finds the Crescent Jade."
+        },
+        {
+          "speaker": "system",
+          "text": "He never meets Luna."
+        },
+        {
+          "speaker": "system",
+          "text": "Sometimes survival means walking away."
+        },
+        {
+          "speaker": "system",
+          "text": "But some stories begin only when walking away is no longer possible."
+        }
+      ],
+      "next": null
+    },
+    "p004_split_stair": {
+      "kind": "scene",
+      "id": "p004_split_stair",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Felidian Ruins — Upper Dungeon"
+        },
+        {
+          "speaker": "system",
+          "text": "The entrance closes behind Nox with a low stone groan."
+        },
+        {
+          "speaker": "system",
+          "text": "Two stairways descend beneath the ruins."
+        },
+        {
+          "speaker": "system",
+          "text": "The left stair is broad and completely dry."
+        },
+        {
+          "speaker": "system",
+          "text": "The right stair is narrow and damp."
+        },
+        {
+          "speaker": "nox",
+          "text": "Rizo’s arrow points left.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "A faint current of cool air rises from the right."
+        }
+      ],
+      "next": "p004_reply"
+    },
+    "p004_reply": {
+      "kind": "prompt",
+      "id": "p004_reply",
+      "draft": "I will take",
+      "choices": [
+        {
+          "id": "p004_reply_1",
+          "label": "the marked dry stair",
+          "text": "I will take the marked dry stair.",
+          "next": "p007_breathless_hall"
+        },
+        {
+          "id": "p004_reply_2",
+          "label": "the damp stair with moving air",
+          "text": "I will take the damp stair with moving air.",
+          "next": "p008_moths_in_dark"
+        },
+        {
+          "id": "p004_reply_3",
+          "label": "time to inspect both routes",
+          "text": "I will take time to inspect both routes.",
+          "next": "p004_inspection"
+        }
+      ]
+    },
+    "p004_inspection": {
+      "kind": "scene",
+      "id": "p004_inspection",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Dust covers the dry stair."
+        },
+        {
+          "speaker": "system",
+          "text": "Nothing has disturbed it recently."
+        },
+        {
+          "speaker": "system",
+          "text": "Tiny pale moths rest near the damp passage."
+        },
+        {
+          "speaker": "nox",
+          "text": "Living creatures need air.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p004_inspection_reply"
+    },
+    "p004_inspection_reply": {
+      "kind": "prompt",
+      "id": "p004_inspection_reply",
+      "draft": "The",
+      "choices": [
+        {
+          "id": "p004_inspection_reply_1",
+          "label": "moths may be following fresh air",
+          "text": "The moths may be following fresh air.",
+          "next": "p008_moths_in_dark"
+        },
+        {
+          "id": "p004_inspection_reply_2",
+          "label": "untouched stair must be safer",
+          "text": "The untouched stair must be safer.",
+          "next": "p007_breathless_hall"
+        },
+        {
+          "id": "p004_inspection_reply_3",
+          "label": "map is more reliable than insects",
+          "text": "The map is more reliable than insects.",
+          "next": "p007_breathless_hall"
+        }
+      ]
+    },
+    "p007_breathless_hall": {
+      "kind": "scene",
+      "id": "p007_breathless_hall",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "The dry stair leads to a long stone corridor."
+        },
+        {
+          "speaker": "system",
+          "text": "No wind moves through it."
+        },
+        {
+          "speaker": "system",
+          "text": "No insects crawl between the stones."
+        },
+        {
+          "speaker": "rizo",
+          "text": "Three circles mean completely safe.",
+          "mode": "memory"
+        },
+        {
+          "speaker": "system",
+          "text": "Nox raises his lantern."
+        },
+        {
+          "speaker": "system",
+          "text": "The flame contracts into a small blue point."
+        }
+      ],
+      "next": "p007_reply"
+    },
+    "p007_reply": {
+      "kind": "prompt",
+      "id": "p007_reply",
+      "draft": "I should",
+      "choices": [
+        {
+          "id": "p007_reply_1",
+          "label": "test the air before continuing",
+          "text": "I should test the air before continuing.",
+          "next": "p010_dying_flame"
+        },
+        {
+          "id": "p007_reply_2",
+          "label": "move quickly before the flame dies",
+          "text": "I should move quickly before the flame dies.",
+          "next": "ending_airless_tomb"
+        },
+        {
+          "id": "p007_reply_3",
+          "label": "trust the three-circle mark",
+          "text": "I should trust the three-circle mark.",
+          "next": "ending_airless_tomb"
+        }
+      ]
+    },
+    "p010_dying_flame": {
+      "kind": "scene",
+      "id": "p010_dying_flame",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox lowers the lantern toward the floor."
+        },
+        {
+          "speaker": "system",
+          "text": "The flame weakens further."
+        },
+        {
+          "speaker": "nox",
+          "text": "It is not being blown out.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "It is suffocating.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Behind him, pale moths gather near a narrow crack in the wall."
+        }
+      ],
+      "next": "p010_reply"
+    },
+    "p010_reply": {
+      "kind": "prompt",
+      "id": "p010_reply",
+      "draft": "The moths",
+      "choices": [
+        {
+          "id": "p010_reply_1",
+          "label": "must be near fresh air",
+          "text": "The moths must be near fresh air.",
+          "next": "p008_moths_in_dark"
+        },
+        {
+          "id": "p010_reply_2",
+          "label": "must be hiding treasure",
+          "text": "The moths must be hiding treasure.",
+          "next": "ending_airless_tomb"
+        },
+        {
+          "id": "p010_reply_3",
+          "label": "will not help me",
+          "text": "The moths will not help me.",
+          "next": "ending_airless_tomb"
+        }
+      ]
+    },
+    "ending_airless_tomb": {
+      "kind": "ending",
+      "id": "ending_airless_tomb",
+      "title": "THE AIRLESS TOMB",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox continues into the silent corridor."
+        },
+        {
+          "speaker": "system",
+          "text": "His lantern dies first."
+        },
+        {
+          "speaker": "nox",
+          "text": "Rizo said this route was safe.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "His knees strike the stone."
+        },
+        {
+          "speaker": "system",
+          "text": "The corridor remains perfectly silent."
+        }
+      ],
+      "next": null
+    },
+    "p008_moths_in_dark": {
+      "kind": "scene",
+      "id": "p008_moths_in_dark",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "The narrow stair descends beside a wet limestone wall."
+        },
+        {
+          "speaker": "system",
+          "text": "Pale moths flutter ahead of Nox."
+        },
+        {
+          "speaker": "system",
+          "text": "They gather wherever cool air enters through the cracks."
+        },
+        {
+          "speaker": "nox",
+          "text": "They are showing me where the cave can breathe.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Far below, something metallic rings once."
+        },
+        {
+          "speaker": "dungeon",
+          "text": "Ting."
+        }
+      ],
+      "next": "p008_reply"
+    },
+    "p008_reply": {
+      "kind": "prompt",
+      "id": "p008_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p008_reply_1",
+          "label": "follow the moths",
+          "text": "I will follow the moths.",
+          "next": "p012_chamber_of_bells"
+        },
+        {
+          "id": "p008_reply_2",
+          "label": "leave them and follow Rizo’s arrow",
+          "text": "I will leave them and follow Rizo’s arrow.",
+          "next": "p007_breathless_hall"
+        },
+        {
+          "id": "p008_reply_3",
+          "label": "mark the airflow on the map",
+          "text": "I will mark the airflow on the map.",
+          "next": "p009_broken_crescent"
+        }
+      ]
+    },
+    "p009_broken_crescent": {
+      "kind": "scene",
+      "id": "p009_broken_crescent",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox compares the scratched-out route with the dungeon wall."
+        },
+        {
+          "speaker": "system",
+          "text": "A broken crescent has been carved beside a narrow passage."
+        },
+        {
+          "speaker": "system",
+          "text": "Rizo’s fresh ink redirects travelers away from it."
+        },
+        {
+          "speaker": "nox",
+          "text": "He did not make a mistake.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "He covered this route deliberately.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p009_reply"
+    },
+    "p009_reply": {
+      "kind": "prompt",
+      "id": "p009_reply",
+      "draft": "Rizo",
+      "choices": [
+        {
+          "id": "p009_reply_1",
+          "label": "wanted me to avoid this passage",
+          "text": "Rizo wanted me to avoid this passage.",
+          "next": "p012_chamber_of_bells"
+        },
+        {
+          "id": "p009_reply_2",
+          "label": "must have corrected an old error",
+          "text": "Rizo must have corrected an old error.",
+          "next": "p007_breathless_hall"
+        },
+        {
+          "id": "p009_reply_3",
+          "label": "has already explored the dungeon",
+          "text": "Rizo has already explored the dungeon.",
+          "next": "p009_evidence"
+        }
+      ]
+    },
+    "p009_evidence": {
+      "kind": "scene",
+      "id": "p009_evidence",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "A strip of red caravan cloth is caught between two stones."
+        },
+        {
+          "speaker": "system",
+          "text": "It bears the same knot used on Rizo’s supply bags."
+        },
+        {
+          "speaker": "nox",
+          "text": "Someone from the caravan came here before me.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "And Rizo told me there was no previous scout.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p009_evidence_reply"
+    },
+    "p009_evidence_reply": {
+      "kind": "prompt",
+      "id": "p009_evidence_reply",
+      "draft": "I should",
+      "choices": [
+        {
+          "id": "p009_evidence_reply_1",
+          "label": "remember that Rizo lied",
+          "text": "I should remember that Rizo lied.",
+          "next": "p012_chamber_of_bells"
+        },
+        {
+          "id": "p009_evidence_reply_2",
+          "label": "turn back and confront him",
+          "text": "I should turn back and confront him.",
+          "next": "p009_blocked_return"
+        },
+        {
+          "id": "p009_evidence_reply_3",
+          "label": "assume the cloth is old",
+          "text": "I should assume the cloth is old.",
+          "next": "p007_breathless_hall"
+        }
+      ]
+    },
+    "p009_blocked_return": {
+      "kind": "scene",
+      "id": "p009_blocked_return",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox climbs back toward the entrance."
+        },
+        {
+          "speaker": "system",
+          "text": "A slab of stone now blocks the upper stair."
+        },
+        {
+          "speaker": "nox",
+          "text": "Rizo!"
+        },
+        {
+          "speaker": "system",
+          "text": "No answer comes from outside."
+        },
+        {
+          "speaker": "nox",
+          "text": "He sealed it after I entered.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p012_chamber_of_bells"
+    },
+    "p012_chamber_of_bells": {
+      "kind": "scene",
+      "id": "p012_chamber_of_bells",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Chamber of Bells"
+        },
+        {
+          "speaker": "system",
+          "text": "Dozens of bronze bells hang from the ceiling."
+        },
+        {
+          "speaker": "system",
+          "text": "Pale and dark tiles form a path across the floor."
+        },
+        {
+          "speaker": "dungeon",
+          "text": "Ting."
+        },
+        {
+          "speaker": "nox",
+          "text": "I did not touch anything.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "A second bell moves above a dark tile."
+        }
+      ],
+      "next": "p012_reply"
+    },
+    "p012_reply": {
+      "kind": "prompt",
+      "id": "p012_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p012_reply_1",
+          "label": "step between the pale tiles",
+          "text": "I will step between the pale tiles.",
+          "next": "p013_white_veins"
+        },
+        {
+          "id": "p012_reply_2",
+          "label": "walk directly beneath the bells",
+          "text": "I will walk directly beneath the bells.",
+          "next": "ending_falling_bell"
+        },
+        {
+          "id": "p012_reply_3",
+          "label": "throw a stone onto the floor",
+          "text": "I will throw a stone onto the floor.",
+          "next": "p012_test"
+        }
+      ]
+    },
+    "p012_test": {
+      "kind": "scene",
+      "id": "p012_test",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox throws a loose stone onto a dark tile."
+        },
+        {
+          "speaker": "dungeon",
+          "text": "TING."
+        },
+        {
+          "speaker": "system",
+          "text": "A blade sweeps through the air above it."
+        },
+        {
+          "speaker": "nox",
+          "text": "The bell announces the trap.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Dust on the pale tiles remains undisturbed."
+        }
+      ],
+      "next": "p012_test_reply"
+    },
+    "p012_test_reply": {
+      "kind": "prompt",
+      "id": "p012_test_reply",
+      "draft": "The",
+      "choices": [
+        {
+          "id": "p012_test_reply_1",
+          "label": "pale tiles avoid the triggers",
+          "text": "The pale tiles avoid the triggers.",
+          "next": "p013_white_veins"
+        },
+        {
+          "id": "p012_test_reply_2",
+          "label": "dark tiles activate the bells",
+          "text": "The dark tiles activate the bells.",
+          "next": "p013_white_veins"
+        },
+        {
+          "id": "p012_test_reply_3",
+          "label": "shortest route is still best",
+          "text": "The shortest route is still best.",
+          "next": "ending_falling_bell"
+        }
+      ]
+    },
+    "ending_falling_bell": {
+      "kind": "ending",
+      "id": "ending_falling_bell",
+      "title": "BENEATH THE BELL",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox steps beneath the largest bell."
+        },
+        {
+          "speaker": "dungeon",
+          "text": "TING."
+        },
+        {
+          "speaker": "system",
+          "text": "Something releases above him."
+        },
+        {
+          "speaker": "system",
+          "text": "The bell strikes the floor hard enough to crack the stone."
+        }
+      ],
+      "next": null
+    },
+    "p013_white_veins": {
+      "kind": "scene",
+      "id": "p013_white_veins",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox reaches the far side of the bell chamber."
+        },
+        {
+          "speaker": "system",
+          "text": "White mineral veins run through the limestone floor and walls."
+        },
+        {
+          "speaker": "system",
+          "text": "The stone cracks softly beneath his boots."
+        },
+        {
+          "speaker": "cave",
+          "text": "Crack."
+        },
+        {
+          "speaker": "nox",
+          "text": "The white sections are weaker than the gray stone.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p013_reply"
+    },
+    "p013_reply": {
+      "kind": "prompt",
+      "id": "p013_reply",
+      "draft": "I should",
+      "choices": [
+        {
+          "id": "p013_reply_1",
+          "label": "cross without striking the stone",
+          "text": "I should cross without striking the stone.",
+          "next": "p015_rain_mural"
+        },
+        {
+          "id": "p013_reply_2",
+          "label": "break the weak floor deliberately",
+          "text": "I should break the weak floor deliberately.",
+          "next": "p016_lower_passage"
+        },
+        {
+          "id": "p013_reply_3",
+          "label": "test the wall with my hammer",
+          "text": "I should test the wall with my hammer.",
+          "next": "p013_collapse"
+        }
+      ]
+    },
+    "p013_collapse": {
+      "kind": "scene",
+      "id": "p013_collapse",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox taps the white-veined wall."
+        },
+        {
+          "speaker": "cave",
+          "text": "Crack."
+        },
+        {
+          "speaker": "system",
+          "text": "A slab falls between him and the bell chamber."
+        },
+        {
+          "speaker": "nox",
+          "text": "One careless blow could bring down the entire passage.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p013_collapse_reply"
+    },
+    "p013_collapse_reply": {
+      "kind": "prompt",
+      "id": "p013_collapse_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p013_collapse_reply_1",
+          "label": "move carefully forward",
+          "text": "I will move carefully forward.",
+          "next": "p015_rain_mural"
+        },
+        {
+          "id": "p013_collapse_reply_2",
+          "label": "strike the floor again",
+          "text": "I will strike the floor again.",
+          "next": "p016_lower_passage"
+        },
+        {
+          "id": "p013_collapse_reply_3",
+          "label": "try to reopen the blocked route",
+          "text": "I will try to reopen the blocked route.",
+          "next": "ending_buried_scout"
+        }
+      ]
+    },
+    "ending_buried_scout": {
+      "kind": "ending",
+      "id": "ending_buried_scout",
+      "title": "THE BURIED SCOUT",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox strikes the fractured wall."
+        },
+        {
+          "speaker": "cave",
+          "text": "CRACK."
+        },
+        {
+          "speaker": "system",
+          "text": "White-veined limestone gives way around him."
+        },
+        {
+          "speaker": "system",
+          "text": "Rizo’s map remains beneath the rubble."
+        }
+      ],
+      "next": null
+    },
+    "p016_lower_passage": {
+      "kind": "scene",
+      "id": "p016_lower_passage",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox strikes a thin white vein in the floor."
+        },
+        {
+          "speaker": "system",
+          "text": "The stone breaks, revealing a narrow shaft below."
+        },
+        {
+          "speaker": "system",
+          "text": "Cool air rises from darkness."
+        },
+        {
+          "speaker": "system",
+          "text": "Water flows somewhere beneath the dungeon."
+        },
+        {
+          "speaker": "nox",
+          "text": "An underground channel.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p016_reply"
+    },
+    "p016_reply": {
+      "kind": "prompt",
+      "id": "p016_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p016_reply_1",
+          "label": "follow the underground water",
+          "text": "I will follow the underground water.",
+          "next": "p017_girl_beneath_moon"
+        },
+        {
+          "id": "p016_reply_2",
+          "label": "return to the upper corridor",
+          "text": "I will return to the upper corridor.",
+          "next": "p015_rain_mural"
+        },
+        {
+          "id": "p016_reply_3",
+          "label": "search the shaft for treasure",
+          "text": "I will search the shaft for treasure.",
+          "next": "p018_empty_casket"
+        }
+      ]
+    },
+    "p015_rain_mural": {
+      "kind": "scene",
+      "id": "p015_rain_mural",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "A faded mural covers the next chamber."
+        },
+        {
+          "speaker": "system",
+          "text": "Felidian priests stand beneath a crescent moon."
+        },
+        {
+          "speaker": "system",
+          "text": "Between them kneels a young black cat girl."
+        },
+        {
+          "speaker": "system",
+          "text": "Blue lines fall from the sky onto dry fields."
+        },
+        {
+          "speaker": "nox",
+          "text": "A prayer for rain.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "The girl holds no jewel."
+        }
+      ],
+      "next": "p015_reply"
+    },
+    "p015_reply": {
+      "kind": "prompt",
+      "id": "p015_reply",
+      "draft": "The mural shows",
+      "choices": [
+        {
+          "id": "p015_reply_1",
+          "label": "a girl being offered beneath the moon",
+          "text": "The mural shows a girl being offered beneath the moon.",
+          "next": "p017_girl_beneath_moon"
+        },
+        {
+          "id": "p015_reply_2",
+          "label": "priests presenting a hidden treasure",
+          "text": "The mural shows priests presenting a hidden treasure.",
+          "next": "p018_empty_casket"
+        },
+        {
+          "id": "p015_reply_3",
+          "label": "the location of the Crescent Jade",
+          "text": "The mural shows the location of the Crescent Jade.",
+          "next": "p018_empty_casket"
+        }
+      ]
+    },
+    "p017_girl_beneath_moon": {
+      "kind": "scene",
+      "id": "p017_girl_beneath_moon",
+      "messages": [
+        {
+          "speaker": "inscription",
+          "text": "WHEN THE MOON BECOMES A CLAW—"
+        },
+        {
+          "speaker": "inscription",
+          "text": "—THE CRESCENT JADE SHALL BE OFFERED."
+        },
+        {
+          "speaker": "system",
+          "text": "The final word is written beside the painted girl."
+        },
+        {
+          "speaker": "nox",
+          "text": "Jade may not mean a stone.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "Or perhaps the girl is carrying it somewhere I cannot see.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p017_reply"
+    },
+    "p017_reply": {
+      "kind": "prompt",
+      "id": "p017_reply",
+      "draft": "The Crescent Jade",
+      "choices": [
+        {
+          "id": "p017_reply_1",
+          "label": "may be the girl herself",
+          "text": "The Crescent Jade may be the girl herself.",
+          "next": "p019_human_altar"
+        },
+        {
+          "id": "p017_reply_2",
+          "label": "must be hidden behind the mural",
+          "text": "The Crescent Jade must be hidden behind the mural.",
+          "next": "p018_empty_casket"
+        },
+        {
+          "id": "p017_reply_3",
+          "label": "is probably ceremonial jewelry",
+          "text": "The Crescent Jade is probably ceremonial jewelry.",
+          "next": "p018_empty_casket"
+        }
+      ]
+    },
+    "p018_empty_casket": {
+      "kind": "scene",
+      "id": "p018_empty_casket",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "A stone casket rests beneath the mural."
+        },
+        {
+          "speaker": "system",
+          "text": "Nox opens it carefully."
+        },
+        {
+          "speaker": "system",
+          "text": "There are no gems inside."
+        },
+        {
+          "speaker": "system",
+          "text": "Only a silver clasp and several strands of black fur."
+        },
+        {
+          "speaker": "nox",
+          "text": "This was used for clothing.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "Ceremonial clothing.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p018_reply"
+    },
+    "p018_reply": {
+      "kind": "prompt",
+      "id": "p018_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p018_reply_1",
+          "label": "examine the clasp",
+          "text": "I will examine the clasp.",
+          "next": "p018_clasp"
+        },
+        {
+          "id": "p018_reply_2",
+          "label": "take the silver",
+          "text": "I will take the silver.",
+          "next": "p020_treasure_pedestal"
+        },
+        {
+          "id": "p018_reply_3",
+          "label": "leave the casket untouched",
+          "text": "I will leave the casket untouched.",
+          "next": "p019_human_altar"
+        }
+      ]
+    },
+    "p018_clasp": {
+      "kind": "scene",
+      "id": "p018_clasp",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "The clasp is shaped like a crescent moon."
+        },
+        {
+          "speaker": "system",
+          "text": "Its inner surface is lined with black fur."
+        },
+        {
+          "speaker": "nox",
+          "text": "It was worn around someone’s neck.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "Not used to hold a jewel.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p019_human_altar"
+    },
+    "p019_human_altar": {
+      "kind": "scene",
+      "id": "p019_human_altar",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "A low altar stands beyond the mural chamber."
+        },
+        {
+          "speaker": "system",
+          "text": "It is too long to support a jewel."
+        },
+        {
+          "speaker": "system",
+          "text": "Leather restraints hang from both sides."
+        },
+        {
+          "speaker": "system",
+          "text": "A narrow channel leads away from its center."
+        },
+        {
+          "speaker": "nox",
+          "text": "This altar was made for a person.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "A soft bell rings beyond the next doorway."
+        }
+      ],
+      "next": "p019_reply"
+    },
+    "p019_reply": {
+      "kind": "prompt",
+      "id": "p019_reply",
+      "draft": "I should",
+      "choices": [
+        {
+          "id": "p019_reply_1",
+          "label": "approach quietly",
+          "text": "I should approach quietly.",
+          "next": "p021_black_cat_girl"
+        },
+        {
+          "id": "p019_reply_2",
+          "label": "call out for the treasure",
+          "text": "I should call out for the treasure.",
+          "next": "p022_lunas_claws"
+        },
+        {
+          "id": "p019_reply_3",
+          "label": "turn back immediately",
+          "text": "I should turn back immediately.",
+          "next": "p020_treasure_pedestal"
+        }
+      ]
+    },
+    "p020_treasure_pedestal": {
+      "kind": "scene",
+      "id": "p020_treasure_pedestal",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox enters a round chamber."
+        },
+        {
+          "speaker": "system",
+          "text": "An empty pedestal stands beneath an opening in the ceiling."
+        },
+        {
+          "speaker": "system",
+          "text": "Crescent moonlight falls across its surface."
+        },
+        {
+          "speaker": "nox",
+          "text": "Empty.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "Someone reached the treasure first.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "A black tail disappears behind a pillar."
+        }
+      ],
+      "next": "p020_reply"
+    },
+    "p020_reply": {
+      "kind": "prompt",
+      "id": "p020_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p020_reply_1",
+          "label": "search behind the pillar",
+          "text": "I will search behind the pillar.",
+          "next": "p021_black_cat_girl"
+        },
+        {
+          "id": "p020_reply_2",
+          "label": "touch the crescent seal",
+          "text": "I will touch the crescent seal.",
+          "next": "p023_collapse_trigger"
+        },
+        {
+          "id": "p020_reply_3",
+          "label": "demand that the thief come out",
+          "text": "I will demand that the thief come out.",
+          "next": "p022_lunas_claws"
+        }
+      ]
+    },
+    "p021_black_cat_girl": {
+      "kind": "scene",
+      "id": "p021_black_cat_girl",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox moves around the pillar."
+        },
+        {
+          "speaker": "system",
+          "text": "A black Felidian girl sits on the floor."
+        },
+        {
+          "speaker": "system",
+          "text": "A broken ceremonial clasp hangs from her neck."
+        },
+        {
+          "speaker": "system",
+          "text": "Her yellow eyes remain fixed on him."
+        },
+        {
+          "speaker": "luna",
+          "text": "You took your time."
+        },
+        {
+          "speaker": "nox",
+          "text": "A Felidian.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "A cat.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "luna",
+          "text": "Did Rizo send you?"
+        }
+      ],
+      "next": "p021_reply"
+    },
+    "p021_reply": {
+      "kind": "prompt",
+      "id": "p021_reply",
+      "draft": "I",
+      "choices": [
+        {
+          "id": "p021_reply_1",
+          "label": "came looking for the Crescent Jade",
+          "text": "I came looking for the Crescent Jade.",
+          "next": "p021_jade_reply"
+        },
+        {
+          "id": "p021_reply_2",
+          "label": "was sent here by Rizo",
+          "text": "I was sent here by Rizo.",
+          "next": "p024_broken_entrance"
+        },
+        {
+          "id": "p021_reply_3",
+          "label": "do not know anyone named Rizo",
+          "text": "I do not know anyone named Rizo.",
+          "next": "p022_lunas_claws"
+        }
+      ]
+    },
+    "p021_jade_reply": {
+      "kind": "scene",
+      "id": "p021_jade_reply",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Luna’s expression changes."
+        },
+        {
+          "speaker": "luna",
+          "text": "The Crescent Jade."
+        },
+        {
+          "speaker": "luna",
+          "text": "Is that what he told you?"
+        },
+        {
+          "speaker": "nox",
+          "text": "You know where it is."
+        },
+        {
+          "speaker": "luna",
+          "text": "Closer than you think."
+        },
+        {
+          "speaker": "system",
+          "text": "Stone grinds somewhere above them."
+        }
+      ],
+      "next": "p024_broken_entrance"
+    },
+    "p022_lunas_claws": {
+      "kind": "scene",
+      "id": "p022_lunas_claws",
+      "messages": [
+        {
+          "speaker": "luna",
+          "text": "A treasure thief should not make demands."
+        },
+        {
+          "speaker": "system",
+          "text": "Luna rises."
+        },
+        {
+          "speaker": "system",
+          "text": "Her claws extend with a quiet metallic sound."
+        },
+        {
+          "speaker": "nox",
+          "text": "She knows Rizo’s name.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "She was waiting for us.",
+          "mode": "thought"
+        }
+      ],
+      "next": "p022_reply"
+    },
+    "p022_reply": {
+      "kind": "prompt",
+      "id": "p022_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p022_reply_1",
+          "label": "drop Rizo’s map",
+          "text": "I will drop Rizo’s map.",
+          "next": "p022_map"
+        },
+        {
+          "id": "p022_reply_2",
+          "label": "run for the doorway",
+          "text": "I will run for the doorway.",
+          "next": "p025_chase_begins"
+        },
+        {
+          "id": "p022_reply_3",
+          "label": "threaten her with my knife",
+          "text": "I will threaten her with my knife.",
+          "next": "p022_threat"
+        }
+      ]
+    },
+    "p022_map": {
+      "kind": "scene",
+      "id": "p022_map",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Rizo’s map lands between them."
+        },
+        {
+          "speaker": "system",
+          "text": "Luna looks down at the fresh black arrows."
+        },
+        {
+          "speaker": "luna",
+          "text": "He changed the route."
+        },
+        {
+          "speaker": "nox",
+          "text": "You have seen this map before?"
+        },
+        {
+          "speaker": "luna",
+          "text": "I have seen what happens to those who follow it."
+        },
+        {
+          "speaker": "system",
+          "text": "The ceiling shudders."
+        }
+      ],
+      "next": "p024_broken_entrance"
+    },
+    "p022_threat": {
+      "kind": "scene",
+      "id": "p022_threat",
+      "messages": [
+        {
+          "speaker": "nox",
+          "text": "Stay back."
+        },
+        {
+          "speaker": "luna",
+          "text": "You entered my territory."
+        },
+        {
+          "speaker": "luna",
+          "text": "You searched our altar."
+        },
+        {
+          "speaker": "luna",
+          "text": "And now you point a knife at me?"
+        },
+        {
+          "speaker": "system",
+          "text": "A deep crack travels through the chamber."
+        }
+      ],
+      "next": "p025_chase_begins"
+    },
+    "p023_collapse_trigger": {
+      "kind": "scene",
+      "id": "p023_collapse_trigger",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox presses the crescent seal."
+        },
+        {
+          "speaker": "system",
+          "text": "A hidden mechanism moves beneath the pedestal."
+        },
+        {
+          "speaker": "dungeon",
+          "text": "TING."
+        },
+        {
+          "speaker": "system",
+          "text": "The ceiling opening begins to close."
+        },
+        {
+          "speaker": "luna",
+          "text": "Take your hand away."
+        }
+      ],
+      "next": "p023_reply"
+    },
+    "p023_reply": {
+      "kind": "prompt",
+      "id": "p023_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p023_reply_1",
+          "label": "release the seal",
+          "text": "I will release the seal.",
+          "next": "p024_broken_entrance"
+        },
+        {
+          "id": "p023_reply_2",
+          "label": "force it open",
+          "text": "I will force it open.",
+          "next": "ending_crushed_pedestal"
+        },
+        {
+          "id": "p023_reply_3",
+          "label": "ask Luna what it controls",
+          "text": "I will ask Luna what it controls.",
+          "next": "p023_question"
+        }
+      ]
+    },
+    "p023_question": {
+      "kind": "scene",
+      "id": "p023_question",
+      "messages": [
+        {
+          "speaker": "nox",
+          "text": "What does it control?"
+        },
+        {
+          "speaker": "luna",
+          "text": "The entrance."
+        },
+        {
+          "speaker": "luna",
+          "text": "And now it is collapsing."
+        },
+        {
+          "speaker": "system",
+          "text": "A roar travels through the upper dungeon."
+        }
+      ],
+      "next": "p024_broken_entrance"
+    },
+    "ending_crushed_pedestal": {
+      "kind": "ending",
+      "id": "ending_crushed_pedestal",
+      "title": "THE EMPTY PEDESTAL",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "Nox forces the seal downward."
+        },
+        {
+          "speaker": "system",
+          "text": "The mechanism locks."
+        },
+        {
+          "speaker": "system",
+          "text": "The stone ceiling closes around the pedestal."
+        },
+        {
+          "speaker": "luna",
+          "text": "Let go!"
+        },
+        {
+          "speaker": "system",
+          "text": "The chamber becomes still."
+        }
+      ],
+      "next": null
+    },
+    "p024_broken_entrance": {
+      "kind": "scene",
+      "id": "p024_broken_entrance",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "The dungeon shakes."
+        },
+        {
+          "speaker": "system",
+          "text": "Dust pours from the ceiling."
+        },
+        {
+          "speaker": "system",
+          "text": "Somewhere above, the entrance collapses."
+        },
+        {
+          "speaker": "nox",
+          "text": "Rizo!"
+        },
+        {
+          "speaker": "system",
+          "text": "No answer comes through the stone."
+        },
+        {
+          "speaker": "luna",
+          "text": "He is not coming for you."
+        },
+        {
+          "speaker": "nox",
+          "text": "You do not know that."
+        },
+        {
+          "speaker": "luna",
+          "text": "I know exactly what he sent you to do."
+        },
+        {
+          "speaker": "system",
+          "text": "A second crack splits the chamber floor."
+        },
+        {
+          "speaker": "luna",
+          "text": "Move."
+        }
+      ],
+      "next": "p024_reply"
+    },
+    "p024_reply": {
+      "kind": "prompt",
+      "id": "p024_reply",
+      "draft": "I will",
+      "choices": [
+        {
+          "id": "p024_reply_1",
+          "label": "follow Luna’s warning",
+          "text": "I will follow Luna’s warning.",
+          "next": "part2_escape_from_luna"
+        },
+        {
+          "id": "p024_reply_2",
+          "label": "run away from her",
+          "text": "I will run away from her.",
+          "next": "p025_chase_begins"
+        },
+        {
+          "id": "p024_reply_3",
+          "label": "stay and search for another exit",
+          "text": "I will stay and search for another exit.",
+          "next": "p024_floor_breaks"
+        }
+      ]
+    },
+    "p024_floor_breaks": {
+      "kind": "scene",
+      "id": "p024_floor_breaks",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "The cracked floor gives way."
+        },
+        {
+          "speaker": "system",
+          "text": "Nox falls into a sloping limestone passage."
+        },
+        {
+          "speaker": "system",
+          "text": "Luna lands behind him."
+        },
+        {
+          "speaker": "luna",
+          "text": "Stop running."
+        },
+        {
+          "speaker": "nox",
+          "text": "I am falling!"
+        },
+        {
+          "speaker": "system",
+          "text": "The passage throws them both into darkness."
+        }
+      ],
+      "next": "p025_chase_begins"
+    },
+    "p025_chase_begins": {
+      "kind": "scene",
+      "id": "p025_chase_begins",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "PART II"
+        },
+        {
+          "speaker": "system",
+          "text": "ESCAPE FROM LUNA"
+        },
+        {
+          "speaker": "system",
+          "text": "Limestone Cave — Unknown depth"
+        },
+        {
+          "speaker": "system",
+          "text": "Nox lands in a shallow underground stream."
+        },
+        {
+          "speaker": "system",
+          "text": "Behind him, Luna rises silently from the water."
+        },
+        {
+          "speaker": "luna",
+          "text": "Little mouse."
+        },
+        {
+          "speaker": "luna",
+          "text": "We are not finished."
+        },
+        {
+          "speaker": "nox",
+          "text": "The entrance is gone.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "The cat is still here.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Somewhere ahead, pale moths flutter toward moving air."
+        }
+      ],
+      "next": null
+    },
+    "part2_escape_from_luna": {
+      "kind": "scene",
+      "id": "part2_escape_from_luna",
+      "messages": [
+        {
+          "speaker": "system",
+          "text": "PART II"
+        },
+        {
+          "speaker": "system",
+          "text": "ESCAPE FROM LUNA"
+        },
+        {
+          "speaker": "system",
+          "text": "Limestone Cave — Unknown depth"
+        },
+        {
+          "speaker": "system",
+          "text": "Nox follows Luna into the underground passage."
+        },
+        {
+          "speaker": "luna",
+          "text": "Stay close, little mouse."
+        },
+        {
+          "speaker": "nox",
+          "text": "The entrance is gone.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "nox",
+          "text": "For now, Luna is the only guide I have.",
+          "mode": "thought"
+        },
+        {
+          "speaker": "system",
+          "text": "Pale moths flutter ahead toward moving air."
+        }
+      ],
+      "next": null
+    }
+  }
+}

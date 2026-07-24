@@ -1,61 +1,28 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import compiled from './generated/story.json'
 import { Composer } from './components/Composer'
 import { MessageBubble } from './components/MessageBubble'
 import { SuggestionBar } from './components/SuggestionBar'
-import { TypingIndicator } from './components/TypingIndicator'
-import { endings, firstResponse, nodes, opening } from './data/story'
-import type { ChatMessage, Ending, Suggestion } from './types/story'
+import { choose, restart, send } from './runtime/engine'
+import type { CompiledStory, RuntimeChoice } from './types/story'
 
-const wait = (ms: number) => new Promise((resolve) => window.setTimeout(resolve, ms))
-let id = 0
-const stamp = (messages: Omit<ChatMessage, 'id'>[]) => messages.map((message) => ({ ...message, id: `message-${id++}` }))
-
+const story = compiled as CompiledStory
 export default function App() {
-  const [messages, setMessages] = useState<ChatMessage[]>(() => stamp(opening))
-  const [nodeId, setNodeId] = useState('start')
-  const [complete, setComplete] = useState<string | null>(null)
-  const [typing, setTyping] = useState(false)
+  const [state, setState] = useState(() => restart(story))
   const [locked, setLocked] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
-  const [decision, setDecision] = useState(1)
-  const [ending, setEnding] = useState<Ending | null>(null)
   const bottomRef = useRef<HTMLDivElement>(null)
-  const runRef = useRef(0)
-  const node = nodes[nodeId]
-
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages, typing, nodeId, complete, ending])
-  const add = useCallback((items: Omit<ChatMessage, 'id'>[]) => setMessages((old) => [...old, ...stamp(items)]), [])
-  const choose = async (suggestion: Suggestion) => {
-    if (locked) return
-    setLocked(true); setSelected(suggestion.id)
-    await wait(180)
-    if (suggestion.nextNodeId) setNodeId(suggestion.nextNodeId)
-    if (suggestion.completedText) setComplete(suggestion.completedText)
-    setSelected(null); setLocked(false)
-  }
-  const respond = async (text: string, token: number) => {
-    await wait(380); if (runRef.current !== token) return
-    setTyping(true); await wait(980); if (runRef.current !== token) return
-    setTyping(false)
-    if (decision === 1) { add(firstResponse(text)); setDecision(2); setNodeId('trust'); setLocked(false); return }
-    const result = endings[text]; add(result.messages); setEnding(result)
-    if (result.delayedMessage) { await wait(2000); if (runRef.current === token) add([{ speaker: 'luna', text: result.delayedMessage }]) }
-    setLocked(false)
-  }
-  const send = useCallback(() => {
-    if (!complete || locked) return
-    const text = complete; const token = runRef.current
-    add([{ speaker: 'player', text }]); setComplete(null); setLocked(true); void respond(text, token)
-  }, [add, complete, locked, decision])
-  useEffect(() => {
-    const key = (event: KeyboardEvent) => { if (event.key === 'Enter') send() }
-    window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key)
-  }, [send])
-  const restart = () => { runRef.current += 1; id = 0; setMessages(stamp(opening)); setNodeId('start'); setComplete(null); setTyping(false); setLocked(false); setSelected(null); setDecision(1); setEnding(null) }
-
-  return <main className="stage"><section className="phone" aria-label="Conversation with Luna">
-    <header><button aria-label="Back">‹ <span>Back</span></button><div><strong>Luna</strong><small><i /> Online</small></div><button aria-label="Conversation menu">•••</button></header>
-    <div className="chat" aria-live="polite">{messages.map((message) => <MessageBubble key={message.id} message={message} />)}{typing && <TypingIndicator />}{ending && <div className="ending"><span>ENDING</span><h2>{ending.title}</h2><button onClick={restart}>↻ Restart Conversation</button></div>}<div ref={bottomRef} /></div>
-    <footer>{!ending && <SuggestionBar suggestions={complete || (locked && typing) ? [] : node.suggestions} disabled={locked} selected={selected} onSelect={choose} />}<Composer text={complete ?? node.draftText} complete={Boolean(complete)} locked={locked} onSend={send} /><div className="home-indicator" /></footer>
+  const node = story.nodes[state.nodeId]
+  const prompt = node?.kind === 'prompt' ? node : null
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [state])
+  const onChoose = (choice: RuntimeChoice) => { if (locked) return; setLocked(true); setSelected(choice.id); window.setTimeout(() => { setState((old) => choose(old, choice)); setSelected(null); setLocked(false) }, 160) }
+  const onSend = () => { if (!state.completed || locked) return; setLocked(true); window.setTimeout(() => { setState((old) => send(story, old)); setLocked(false) }, 500) }
+  useEffect(() => { const key = (event: KeyboardEvent) => { if (event.key === 'Enter') onSend() }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key) })
+  const reset = () => { setState(restart(story)); setLocked(false); setSelected(null) }
+  const terminal = !prompt && !state.ending
+  return <main className="stage"><section className="phone" aria-label="Crescent Luna story">
+    <header><button aria-label="Back">‹ <span>Back</span></button><div><strong>Crescent Luna</strong><small><i /> Story online</small></div><button aria-label="Conversation menu">•••</button></header>
+    <div className="chat" aria-live="polite">{state.messages.map((message) => <MessageBubble key={message.id} message={message} />)}{state.ending && <div className="ending"><span>ENDING</span><h2>{state.ending}</h2><button onClick={reset}>↻ Restart Story</button></div>}{terminal && <div className="ending"><span>TO BE CONTINUED</span><h2>ESCAPE FROM LUNA</h2><button onClick={reset}>↻ Restart Story</button></div>}<div ref={bottomRef} /></div>
+    <footer>{prompt && !state.ending && <SuggestionBar suggestions={state.completed ? [] : prompt.choices} disabled={locked} selected={selected} onSelect={onChoose} />}<Composer text={state.completed?.text ?? prompt?.draft ?? ''} complete={Boolean(state.completed)} locked={locked || Boolean(state.ending) || terminal} onSend={onSend} /><div className="home-indicator" /></footer>
   </section></main>
 }
