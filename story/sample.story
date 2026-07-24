@@ -2304,3 +2304,518 @@ system: Priests, bandits, and frightened villagers fight for control of the temp
 system: The final reservoir gate remains closed.
 system: Rizo dies surrounded by objects everyone considers valuable.
 system: Nox finally understands that a bargain can succeed and still destroy everyone involved.
+
+@scene p106_valley_drinks
+system: Nox grips the ancient control wheel.
+system: Luna braces herself beside him.
+system: The wheel resists for a moment.
+system: Then it begins to turn.
+temple: THUM.
+system: One stone gate opens beneath the reservoir.
+system: Water enters the first channel in a controlled stream.
+luna: Slowly.
+nox: I am trying.
+system: A second gate shudders.
+system: Far below, temple bells begin ringing without human hands.
+-> p106_reply
+
+@prompt p106_reply “I will”
+
+* “keep the flow controlled” => “I will keep the flow controlled.” -> p106_channels_open
+* “open the second gate fully” => “I will open the second gate fully.” -> p107_great_flood
+* “stop and check the valley” => “I will stop and check the valley.” -> p106_check_valley
+
+@scene p106_check_valley
+system: Nox locks the wheel temporarily.
+system: Luna climbs to a narrow opening overlooking the valley.
+system: Water has reached the first dry canal.
+system: Villagers gather beside it.
+system: The channel walls are holding.
+luna: It works.
+nox: One canal works.
+luna: That is more than one sacrifice ever proved.
+-> p106_channels_open
+
+@scene p106_channels_open
+system: Nox opens the remaining channels one by one.
+system: Water moves beneath the temple like a waking creature.
+system: Dry fountains begin to tremble.
+system: Mud-dark water spills into village reservoirs.
+system: The people below stop chanting.
+system: For the first time, the temple bells sound like celebration.
+-> p106_after_water
+
+@scene p106_after_water
+system: The High Priest enters the control chamber.
+system: His ceremonial robes are wet at the hem.
+priest: The lower canal is filling.
+priest: The western wells are rising.
+luna: And I am still alive.
+system: The High Priest looks at the ancient controls.
+priest: We remembered the prayer.
+priest: We forgot the work.
+-> p106_priest_reply
+
+@prompt p106_priest_reply “I will say”
+
+* “then teach the work again” => “Then teach the work again.” -> p109_public_choice
+* “the priesthood must answer for this” => “The priesthood must answer for this.” -> p108_faith_in_ruins
+* “Luna should decide what happens next” => “Luna should decide what happens next.” -> p109_public_choice
+
+@scene p107_great_flood
+system: Nox forces the final control past its marked limit.
+temple: CRACK.
+system: Every reservoir gate opens at once.
+system: Water erupts through the ancient channels.
+luna: Nox!
+system: The temple floor shakes beneath them.
+system: Far below, the first canal wall breaks.
+-> p107_reply
+
+@prompt p107_reply “I will”
+
+* “try to close the gates” => “I will try to close the gates.” -> p107_too_late
+* “warn the lower villages” => “I will warn the lower villages.” -> p107_warning
+* “escape with Luna” => “We need to escape.” -> p107_escape
+
+@scene p107_too_late
+system: Nox throws his weight against the wheel.
+system: The damaged mechanism spins freely.
+system: Water has already passed beyond the temple.
+luna: You cannot pull a river backward.
+-> ending_great_flood
+
+@scene p107_warning
+system: Nox strikes the emergency bell.
+temple: TING.
+temple: TING.
+temple: TING.
+system: Guards run toward the lower valley.
+system: Some villagers escape to higher ground.
+system: Others do not have enough time.
+-> ending_great_flood
+
+@scene p107_escape
+system: Luna pulls Nox into the maintenance tunnel.
+system: Behind them, the control chamber collapses.
+system: They reach the ridge as water tears through the valley below.
+nox: I was trying to save them.
+luna: I know.
+luna: That does not make the water gentler.
+-> ending_great_flood
+
+@ending ending_great_flood “THE GREAT FLOOD”
+system: The drought ends in a single night.
+system: So do several villages.
+system: The priests call the destruction punishment.
+system: Rizo calls it an opportunity.
+system: Nox knows it was neither.
+system: It was impatience given the strength of a river.
+
+@scene p108_faith_in_ruins
+system: Nox carries the oldest temple record onto the ceremonial platform.
+system: Villagers fill the steps below.
+system: Luna stands beside him without ceremonial restraints.
+nox: The first Crescent Jade was not killed.
+nox: She maintained the water system.
+nox: The sacrifice came later.
+system: Murmurs spread through the crowd.
+priest: You ask them to abandon generations of faith.
+luna: No.
+luna: We are asking why faith required girls to die after knowledge was lost.
+-> p108_reply
+
+@prompt p108_reply “I will”
+
+* “demand the priesthood surrender power” => “The priesthood must surrender control of the temple.” -> p108_break_priesthood
+* “ask the priests to preserve the records” => “Preserve the truth and teach it openly.” -> p109_public_choice
+* “leave before the crowd turns violent” => “We should leave now.” -> ending_beyond_felidian
+
+@scene p108_break_priesthood
+system: Several villagers shout in agreement.
+system: Others raise sacred charms and accuse Luna of blasphemy.
+system: Guards look toward the High Priest for orders.
+priest: If I surrender the temple now, the valley may tear itself apart.
+nox: If you do not, nothing changes.
+system: The crowd surges toward the altar.
+-> p108_break_reply
+
+@prompt p108_break_reply “I will”
+
+* “stand between the crowd and Luna” => “I will stand beside Luna.” -> p109_public_choice
+* “let the crowd seize the priests” => “The people should decide.” -> p108_riot
+* “escape through the aqueduct” => “We leave before this becomes a massacre.” -> ending_beyond_felidian
+
+@scene p108_riot
+system: The first stone strikes a priest.
+system: A guard draws his sword.
+system: The temple steps erupt into panic.
+system: The records fall beneath trampling feet.
+luna: This is not freedom.
+nox: I know.
+system: Fire reaches the archive before dawn.
+-> ending_faith_in_ashes
+
+@ending ending_faith_in_ashes “FAITH IN ASHES”
+system: The sacrifice ends.
+system: So does the priesthood.
+system: But the old records burn with it.
+system: Years later, no one agrees what the temple once meant.
+system: One cruel tradition is destroyed.
+system: Nothing reliable replaces it.
+
+@scene p109_public_choice
+system: Dawn reaches the Temple of Abundance.
+system: Water moves through the valley canals.
+system: The ceremonial altar remains empty.
+system: The High Priest removes the silver crescent from Luna’s neck.
+priest: The title of Crescent Jade belongs to the temple.
+luna: No.
+system: Luna takes the crescent from his hand.
+luna: The title belonged to every girl you placed beneath it.
+luna: What happens to it now belongs to us.
+-> p109_reply
+
+@prompt p109_reply “I will”
+
+* “stand publicly beside Luna” => “I will stand beside Luna.” -> p109_crescent_luna
+* “leave the decision entirely to her” => “This is Luna’s decision.” -> p109_lunas_decision
+* “ask to return the title to the first keeper” => “Remember the first keeper, not the sacrifice.” -> p109_lunas_decision
+
+@scene p109_lunas_decision
+system: Luna looks over the valley.
+system: Villagers wait below.
+system: Priests wait behind her.
+system: Nox waits at her side.
+luna: The Crescent Jade was supposed to give her life to the valley.
+luna: Not lose it.
+luna: I will keep the waters until others learn how.
+priest: Then you accept the title?
+luna: No.
+luna: I choose a new one.
+-> p109_crescent_luna
+
+@scene p109_crescent_luna
+system: Luna removes the ceremonial clasp.
+system: She places it on the control wheel rather than around her neck.
+luna: The old title ends here.
+nox: Then what should they call you?
+system: Luna looks toward the fading crescent moon.
+luna: Luna is enough.
+system: A child in the crowd raises an empty water cup.
+child: Crescent Luna!
+system: Others repeat the name.
+system: Not as the name of a sacrifice.
+system: As the name of the girl who ended one.
+-> ending_crescent_luna
+
+@ending ending_crescent_luna “CRESCENT LUNA”
+system: The Temple of Abundance becomes a school for water keepers.
+system: Its records are copied and sent to every village.
+system: No child is chosen for the altar again.
+system: The rains do not return immediately.
+system: But the stored water carries the valley through the season.
+system: Rizo’s surviving bandits leave Felidian territory without treasure.
+system: Some later return as traders.
+system: Nox remains until the canals are repaired.
+system: When he finally prepares to leave, Luna waits beside the road.
+nox: Are you following me?
+luna: You are entering another ruin alone.
+nox: That did not answer my question.
+luna: Then do not run.
+system: Beneath the crescent moon, the cat follows the mouse.
+system: Not close enough to catch him.
+system: Never far enough to lose him.
+
+@scene p104_battle_beneath_crescent
+system: Nox cuts through the altar rope.
+system: Guards rush toward him.
+system: Luna tears free before they reach the platform.
+luna: You chose the loud solution.
+nox: I was running out of quiet ones.
+system: Rizo appears at the Moon Gate with the Rain Seal.
+rizo: While everyone is distracted, I suggest we leave.
+-> p104_reply
+
+@prompt p104_reply “I will”
+
+* “protect Luna from the guards” => “I will protect Luna.” -> p104_protect_luna
+* “pursue Rizo and the Rain Seal” => “I will pursue Rizo.” -> p104_pursue_rizo
+* “escape with Luna through the aqueduct” => “We escape now.” -> ending_beyond_felidian
+
+@scene p104_protect_luna
+system: Nox places himself between Luna and the nearest guard.
+guard: Move.
+nox: No.
+guard: You cannot stop all of us.
+nox: I only need to stop the first one.
+system: Luna steps beside him.
+luna: He is not alone.
+-> p104_protect_reply
+
+@prompt p104_protect_reply “I will”
+
+* “show them the oldest record” => “The sacrifice was never meant to kill her.” -> p103_priests_doubt
+* “fight until the way is clear” => “We are leaving.” -> p104_escape_battle
+* “call on the villagers to choose” => “Ask them whether they still want this.” -> p108_faith_in_ruins
+
+@scene p104_escape_battle
+system: Luna drives the guards back from the altar.
+system: Nox opens the aqueduct gate.
+system: Together they disappear beneath the temple.
+system: Behind them, the bells continue ringing.
+-> ending_beyond_felidian
+
+@scene p104_pursue_rizo
+system: Nox leaves Luna at the altar and runs after Rizo.
+system: Rizo reaches the outer gate first.
+rizo: Still chasing treasure?
+nox: The Rain Seal is not yours.
+rizo: Neither is the girl.
+nox: She belongs to herself.
+rizo: Then why did you leave her behind?
+system: The ceremonial bell rings.
+-> p104_pursue_reply
+
+@prompt p104_pursue_reply “I will”
+
+* “turn back for Luna” => “I will turn back for Luna.” -> p104_too_late
+* “fight Rizo for the seal” => “Give me the seal.” -> ending_rizos_golden_bargain
+* “let Rizo escape and return” => “The seal can wait.” -> p104_too_late
+
+@scene p104_too_late
+system: Nox runs back toward the altar.
+system: The crowd is silent.
+system: The High Priest lowers his ceremonial blade.
+nox: Luna!
+-> ending_promised_rain
+
+@scene p105_promised_rain
+system: The crescent moon reaches the center of the temple arch.
+system: Luna kneels before the altar.
+luna: Nox.
+nox: I am here.
+luna: Do not let them call this my choice.
+system: The ceremonial bell rings once.
+-> ending_promised_rain
+
+@ending ending_promised_rain “THE PROMISED RAIN”
+system: The ceremony ends before dawn.
+system: Luna does not leave the altar.
+system: Three days later, clouds gather above the Felidian valley.
+system: Rain falls across the fields.
+system: The priests call it a miracle.
+system: Nox never learns whether the rain was already coming.
+system: He only knows what it cost.
+
+@scene ending_beyond_felidian
+system: Nox and Luna emerge from the aqueduct beyond the temple walls.
+system: Behind them, bells call the guards to the altar.
+system: Ahead, the open road crosses the dry Felidian plain.
+nox: We escaped.
+luna: Yes.
+nox: You do not sound relieved.
+luna: The valley is still dying.
+system: Smoke rises from a distant village.
+-> ending_beyond_reply
+
+@prompt ending_beyond_reply “We can”
+
+* “return when we find another solution” => “We can return when we find another solution.” -> ending_beyond_felidian_final
+* “leave this place forever” => “We can leave this place forever.” -> ending_beyond_felidian_final
+* “warn other lands about the drought” => “We can warn other lands about the drought.” -> ending_beyond_felidian_final
+
+@ending ending_beyond_felidian_final “BEYOND FELIDIAN TERRITORY”
+system: Nox and Luna cross the border together.
+system: Luna survives.
+system: The sacrifice does not occur that night.
+system: But the temple remains unchanged.
+system: Another drought season begins.
+system: Somewhere behind them, the priests begin searching for a new Crescent Jade.
+system: Freedom saves two lives.
+system: It does not yet save the valley.
+
+@scene p119_rizos_final_bargain
+system: Rizo reaches the final treasury chamber.
+system: Golden ceremonial offerings cover the floor.
+system: The Rain Seal opens a narrow door behind them.
+rizo: Enough wealth for both of us.
+nox: And Luna?
+rizo: The priests can have their miracle.
+rizo: We take what miracles are worth.
+-> p119_reply
+
+@prompt p119_reply “I will”
+
+* “accept the bargain” => “We take the treasure.” -> ending_rizos_golden_bargain
+* “refuse and return to Luna” => “I am going back.” -> p104_too_late
+* “take the Rain Seal from Rizo” => “The seal stays here.” -> p119_fight
+
+@scene p119_fight
+system: Nox reaches for the Rain Seal.
+system: Rizo draws his knife.
+rizo: You finally learned to want something for yourself.
+nox: No.
+nox: I learned what not to sell.
+system: Their blades meet above the golden offerings.
+-> p119_fight_reply
+
+@prompt p119_fight_reply “I will”
+
+* “push Rizo toward the closing treasury door” => “This treasure is yours.” -> ending_rizos_golden_bargain
+* “abandon the fight and return to Luna” => “She matters more than the seal.” -> p104_too_late
+* “call for Luna’s help” => “Luna!” -> p119_no_answer
+
+@scene p119_no_answer
+system: Only the temple bell answers.
+temple: TING.
+rizo: You left her at the altar.
+rizo: Did you expect her to follow you again?
+-> ending_rizos_golden_bargain
+
+@ending ending_rizos_golden_bargain “RIZO’S GOLDEN BARGAIN”
+system: The treasury door closes.
+system: Rizo and Nox stand among enough gold to purchase a kingdom.
+system: The Rain Seal no longer opens the door from inside.
+rizo: There must be another exit.
+system: Beyond the stone, the ceremonial bell rings.
+system: The treasure is real.
+system: So is the price.
+
+@scene p120_no_adventure_epilogue
+system: Nox never enters the dungeon.
+system: Rizo sends another scout the following morning.
+system: The caravan later disappears inside Felidian territory.
+system: Nox hears rumors of a black cat girl sacrificed during a drought.
+system: He never knows whether the stories are connected.
+-> ending_no_adventure
+
+@ending ending_no_adventure “NO ADVENTURE BEGUN”
+system: Nox survives by refusing Rizo’s mission.
+system: He never meets Luna.
+system: He never discovers the truth of the Crescent Jade.
+system: Sometimes walking away is wisdom.
+system: Sometimes it merely leaves the danger for someone else.
+
+@scene p115_mouse_escaped_epilogue
+system: Nox walks alone toward Murid territory.
+system: He keeps Rizo’s false map folded inside his coat.
+system: Every night, he dreams of pale moths and a black tail disappearing into darkness.
+system: Weeks later, temple bells are heard across the border.
+-> ending_mouse_escaped_alone
+
+@ending ending_mouse_escaped_alone “THE MOUSE WHO ESCAPED ALONE”
+system: Nox escapes the cave, the bandits, and the priests.
+system: No one follows him.
+system: He survives.
+system: He also learns that survival can become another kind of burden.
+system: Whenever rain falls, he wonders whether Luna lived to see it.
+
+@scene p116_price_of_rain_epilogue
+system: Rizo’s caravan crosses the Felidian border under priestly protection.
+system: Each wagon carries gold, grain, and water.
+system: Nox receives the full share Rizo promised.
+system: Behind them, the Temple of Abundance prepares the altar.
+-> ending_price_of_rain
+
+@ending ending_price_of_rain “THE PRICE OF RAIN”
+rizo: You wanted treasure.
+rizo: Now you have it.
+system: A heavy purse rests in Nox’s hands.
+system: A ceremonial bell rings behind the caravan.
+system: No one looks back.
+system: Three days later, rain falls.
+system: Nox spends the rest of his life wondering whether the priests would have killed Luna even if the sky had already begun to change.
+
+@scene p117_false_treasure_epilogue
+system: Nox follows the green-glass crescent deeper into the temple.
+system: Every false relic opens another false chamber.
+system: By the time he escapes, the moon has reached the altar.
+-> ending_false_treasure
+
+@ending ending_false_treasure “THE FALSE TREASURE”
+system: Nox finds dozens of imitation Crescent Jades.
+system: None is valuable.
+system: None is alive.
+system: The real Crescent Jade dies while he searches for an object that never existed.
+
+@scene p118_buried_abundance_epilogue
+system: Gold, water, and stone press inward around Nox.
+system: The temple mechanism continues adding weight to everything he refuses to release.
+-> ending_buried_abundance
+
+@ending ending_buried_abundance “BURIED BY ABUNDANCE”
+temple: ABUNDANCE WITHOUT RESTRAINT BECOMES BURDEN.
+system: Nox is buried beneath everything he tried to keep.
+system: The temple remains dry.
+system: The altar remains ready.
+
+@scene ending_hunter_catches_mouse_epilogue
+system: Luna catches Nox before he reaches the bandit camp.
+system: She takes Rizo’s map and leaves him bound beside the underground stream.
+nox: Are you going to eat me?
+luna: No.
+nox: That sounded uncertain.
+luna: I am deciding whether you deserve to meet the priests.
+-> ending_hunter_catches_mouse
+
+@ending ending_hunter_catches_mouse “THE HUNTER CATCHES THE MOUSE”
+system: Nox spends the night tied beneath a limestone shelf.
+system: By morning, Luna and Rizo are both gone.
+system: He escapes eventually.
+system: He never learns which one reached the temple first.
+
+@scene ending_one_mouse_caravan_epilogue
+system: Nox raises his knife against Rizo.
+system: The other bandits surround him.
+system: No black shadow falls from the ridge.
+system: No ally answers his call.
+-> ending_one_mouse_caravan
+
+@ending ending_one_mouse_caravan “ONE MOUSE AGAINST THE CARAVAN”
+rizo: You survived the dungeon.
+rizo: You survived the cat.
+rizo: And you still learned nothing about choosing your battles.
+system: Courage without trust leaves Nox standing alone.
+
+@scene ending_airless_tomb_epilogue
+system: Nox follows Rizo’s three-circle mark.
+system: His lantern shrinks to a blue point.
+system: Pale moths gather behind him, where fresh air still enters.
+-> ending_airless_tomb
+
+@ending ending_airless_tomb “THE AIRLESS TOMB”
+system: The lantern dies first.
+system: Nox understands the clue only after he no longer has enough air to return.
+
+@scene ending_falling_bell_epilogue
+system: The bronze bell rings above Nox.
+system: A mechanism releases in the ceiling.
+-> ending_falling_bell
+
+@ending ending_falling_bell “BENEATH THE BELL”
+system: Nox mistakes a warning for decoration.
+system: The dungeon does not offer the lesson twice.
+
+@scene ending_buried_scout_epilogue
+system: White veins spread through the limestone.
+system: Nox strikes the wall one final time.
+-> ending_buried_scout
+
+@ending ending_buried_scout “THE BURIED SCOUT”
+system: Rizo’s map remains beneath the rubble.
+system: Another scout may someday find it.
+system: The three-circle marks will still say the route is safe.
+
+@scene ending_crushed_pedestal_epilogue
+system: Nox forces the crescent mechanism downward.
+system: The ceiling closes around the empty pedestal.
+-> ending_crushed_pedestal
+
+@ending ending_crushed_pedestal “THE EMPTY PEDESTAL”
+system: Nox dies trying to open a treasure chamber that never contained a jewel.
+
+@scene credits_crescent_luna
+system: CRESCENT LUNA
+system: END
+system: Thank you for playing.
