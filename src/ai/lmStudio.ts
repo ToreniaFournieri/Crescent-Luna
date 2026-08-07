@@ -9,7 +9,10 @@ export function normalizeBaseUrl(input: string): string {
   let url: URL
   try { url = new URL(input.trim()) } catch { throw new LMStudioError('url', 'Enter a valid LM Studio URL.') }
   if (url.protocol !== 'http:' && url.protocol !== 'https:') throw new LMStudioError('url', 'The endpoint must use http:// or https://.')
-  url.pathname = url.pathname.replace(/\/+$/, '')
+  const pathname = url.pathname.replace(/\/+$/, '')
+  // LM Studio displays the server origin, while its OpenAI-compatible
+  // model and chat endpoints live below /v1.
+  url.pathname = pathname || '/v1'
   return url.toString().replace(/\/$/, '')
 }
 
