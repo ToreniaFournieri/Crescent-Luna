@@ -12,10 +12,16 @@ const ui = {
 
 type Status = 'connecting' | 'online' | 'generating' | 'offline' | 'stopped'
 function friendlyError(error: unknown, language: LunaLanguage) {
-  const cors = language === 'ja' ? 'サーバー、URL、LM StudioのCORS設定を確認してください。HTTPSページではHTTPのlocalhost接続がブラウザーに拒否される場合があります。' : 'Check the server, URL, and LM Studio CORS settings. On an HTTPS page, the browser may block an HTTP localhost connection.'
+  const origin = window.location.origin
+  if (error instanceof LMStudioError && error.kind === 'cors') return language === 'ja'
+    ? `LM Studioには到達できましたが、ブラウザーが応答を読み取れません。LM StudioのServer SettingsでCORSを有効にし、${origin} を許可してから再接続してください。curlの成功だけではブラウザーのCORS許可は確認できません。`
+    : `LM Studio answered, but the browser cannot read it. In LM Studio Server Settings, enable CORS and allow ${origin}, then reconnect. A successful curl does not test browser CORS permission.`
+  const network = window.location.protocol === 'https:'
+    ? (language === 'ja' ? 'このHTTPSページからHTTPのLM Studioへの接続がブラウザーに拒否されました。CORSを有効にしても接続できない場合は、このアプリをMac上で npm run dev で起動してください。curlはブラウザーと同じ制限を受けません。' : 'The browser blocked this HTTPS page from reaching HTTP LM Studio. Enable CORS; if it is still blocked, run this app on the Mac with npm run dev. curl is not subject to the same browser restrictions.')
+    : (language === 'ja' ? 'サーバー、URL、LM StudioのCORS設定を確認してください。' : 'Check the server, URL, and LM Studio CORS settings.')
   if (error instanceof LMStudioError && error.kind === 'http') return `${error.message} Check that the selected model is still loaded.`
   if (error instanceof LMStudioError && (error.kind === 'payload' || error.kind === 'url')) return error.message
-  return cors
+  return network
 }
 
 export function AIStory({ onBack }: { onBack: () => void }) {

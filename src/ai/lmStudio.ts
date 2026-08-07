@@ -2,7 +2,7 @@ export interface ModelInfo { id: string }
 export interface ConversationMessage { role: 'user' | 'assistant'; content: string }
 
 export class LMStudioError extends Error {
-  constructor(public readonly kind: 'url' | 'http' | 'payload' | 'network' | 'timeout' | 'aborted', message: string) { super(message) }
+  constructor(public readonly kind: 'url' | 'http' | 'payload' | 'network' | 'cors' | 'timeout' | 'aborted', message: string) { super(message) }
 }
 
 export function normalizeBaseUrl(input: string): string {
@@ -29,7 +29,22 @@ async function request(url: string, init: RequestInit): Promise<unknown> {
 }
 
 export async function discoverModels(baseUrl: string, signal?: AbortSignal): Promise<ModelInfo[]> {
-  const data = await request(`${normalizeBaseUrl(baseUrl)}/models`, { signal })
+  const modelsUrl = `${normalizeBaseUrl(baseUrl)}/models`
+  let data: unknown
+  try {
+    data = await request(modelsUrl, { signal })
+  } catch (error) {
+    if (!(error instanceof LMStudioError) || error.kind !== 'network') throw error
+    // A no-CORS probe cannot expose response data, but an opaque response proves
+    // that LM Studio answered and that its missing CORS permission is the issue.
+    try {
+      const probe = await fetch(modelsUrl, { mode: 'no-cors', signal })
+      if (probe.type === 'opaque') throw new LMStudioError('cors', 'LM Studio is reachable, but the browser cannot read its response.')
+    } catch (probeError) {
+      if (probeError instanceof LMStudioError) throw probeError
+    }
+    throw error
+  }
   if (!data || typeof data !== 'object' || !Array.isArray((data as { data?: unknown }).data)) throw new LMStudioError('payload', 'LM Studio returned an invalid model list.')
   const models = (data as { data: unknown[] }).data.filter((item): item is ModelInfo => Boolean(item && typeof item === 'object' && typeof (item as ModelInfo).id === 'string' && (item as ModelInfo).id.trim()))
   return models
