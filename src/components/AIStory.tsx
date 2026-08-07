@@ -6,16 +6,22 @@ import { MessageBubble } from './MessageBubble'
 import { TypingIndicator } from './TypingIndicator'
 
 const ui = {
-  en: { back: 'Stories', online: 'Luna AI online', connecting: 'Connecting…', generating: 'Generating…', offline: 'LM Studio offline', stopped: 'Request stopped', placeholder: 'Message Luna…', send: 'Send', stop: 'Stop', retry: 'Retry', newChat: 'New conversation', settings: 'Connection settings', endpoint: 'LM Studio base URL', model: 'Loaded model', reconnect: 'Reconnect', noModels: 'LM Studio is reachable, but no model is loaded. Load a model, then reconnect.', privacy: '127.0.0.1 is your own computer. Conversation content is sent to the endpoint you configure.', confirm: 'Clear this Luna AI conversation? Story I will not be changed.' },
-  ja: { back: 'ストーリー', online: 'Luna AI オンライン', connecting: '接続中…', generating: '生成中…', offline: 'LM Studio オフライン', stopped: 'リクエスト停止', placeholder: 'ルナにメッセージ…', send: '送信', stop: '停止', retry: '再試行', newChat: '新しい会話', settings: '接続設定', endpoint: 'LM Studio ベースURL', model: '読み込み済みモデル', reconnect: '再接続', noModels: 'LM Studioには接続できましたが、モデルがありません。モデルを読み込んで再接続してください。', privacy: '127.0.0.1 はあなた自身のコンピューターです。会話内容は設定したエンドポイントへ送信されます。', confirm: 'Luna AIの会話を消去しますか？ストーリーIは変更されません。' },
+  en: { back: 'Stories', online: 'Luna AI online', connecting: 'Connecting…', generating: 'Generating…', offline: 'LM Studio offline', stopped: 'Request stopped', placeholder: 'Message Luna…', send: 'Send', stop: 'Stop', retry: 'Retry', newChat: 'New conversation', settings: 'Connection settings', endpoint: 'LM Studio server URL', model: 'Loaded model', reconnect: 'Reconnect', noModels: 'LM Studio is reachable, but no model is loaded. Load a model, then reconnect.', privacy: 'Paste the “Reachable at” URL shown by LM Studio; /v1 is added automatically. Conversation content is sent to this endpoint.', confirm: 'Clear this Luna AI conversation? Story I will not be changed.' },
+  ja: { back: 'ストーリー', online: 'Luna AI オンライン', connecting: '接続中…', generating: '生成中…', offline: 'LM Studio オフライン', stopped: 'リクエスト停止', placeholder: 'ルナにメッセージ…', send: '送信', stop: '停止', retry: '再試行', newChat: '新しい会話', settings: '接続設定', endpoint: 'LM Studio サーバーURL', model: '読み込み済みモデル', reconnect: '再接続', noModels: 'LM Studioには接続できましたが、モデルがありません。モデルを読み込んで再接続してください。', privacy: 'LM Studioの「Reachable at」に表示されるURLを貼り付けてください。/v1は自動的に追加されます。会話内容はこのエンドポイントへ送信されます。', confirm: 'Luna AIの会話を消去しますか？ストーリーIは変更されません。' },
 }
 
 type Status = 'connecting' | 'online' | 'generating' | 'offline' | 'stopped'
 function friendlyError(error: unknown, language: LunaLanguage) {
-  const cors = language === 'ja' ? 'サーバー、URL、LM StudioのCORS設定を確認してください。HTTPSページではHTTPのlocalhost接続がブラウザーに拒否される場合があります。' : 'Check the server, URL, and LM Studio CORS settings. On an HTTPS page, the browser may block an HTTP localhost connection.'
+  const origin = window.location.origin
+  if (error instanceof LMStudioError && error.kind === 'cors') return language === 'ja'
+    ? `LM Studioには到達できましたが、ブラウザーが応答を読み取れません。LM StudioのServer SettingsでCORSを有効にし、${origin} を許可してから再接続してください。curlの成功だけではブラウザーのCORS許可は確認できません。`
+    : `LM Studio answered, but the browser cannot read it. In LM Studio Server Settings, enable CORS and allow ${origin}, then reconnect. A successful curl does not test browser CORS permission.`
+  const network = window.location.protocol === 'https:'
+    ? (language === 'ja' ? 'このHTTPSページからHTTPのLM Studioへの接続がブラウザーに拒否されました。CORSを有効にしても接続できない場合は、このアプリをMac上で npm run dev で起動してください。curlはブラウザーと同じ制限を受けません。' : 'The browser blocked this HTTPS page from reaching HTTP LM Studio. Enable CORS; if it is still blocked, run this app on the Mac with npm run dev. curl is not subject to the same browser restrictions.')
+    : (language === 'ja' ? 'サーバー、URL、LM StudioのCORS設定を確認してください。' : 'Check the server, URL, and LM Studio CORS settings.')
   if (error instanceof LMStudioError && error.kind === 'http') return `${error.message} Check that the selected model is still loaded.`
   if (error instanceof LMStudioError && (error.kind === 'payload' || error.kind === 'url')) return error.message
-  return cors
+  return network
 }
 
 export function AIStory({ onBack }: { onBack: () => void }) {
